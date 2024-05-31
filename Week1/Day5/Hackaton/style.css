@@ -83,12 +83,25 @@ p.left-align{
     text-align: left;
 }
 
-/* section1 - hero */
+.bold {
+    font-weight: 700;
+}
+.heavy {
+    font-weight: 900;
+}
+
+.material-icons{
+    vertical-align: baseline;
+    font-size: inherit;
+}
+
+
+/* section - hero */
 #hero h5{
     margin: 30px;
 }
 
-/* section2 - events */
+/* section - events */
 
 tbody td:nth-child(3){
     display: flex;
@@ -99,7 +112,50 @@ table tbody tr:last-child{
     border-bottom: none;
 }
 
-/* section3 - locations */
+/* Section featured events */
+#featured_events>h5:first-child{
+    margin-bottom: 40px;
+    font-size: 1.3rem;
+}
+
+#featured_events>h5:first-child>span{
+    box-sizing: border-box;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #b7c5e8b2;
+}
+
+#featured_events>h5:first-child>span>a{
+    color:#4f7ff7;
+}
+
+.card-container-new{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.card-new{
+    width: 100%;;
+}
+.card-new>a{
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-new>a>img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* section - locations */
 .image-with-text{
     position: relative;
     display: inline-block;
@@ -132,7 +188,7 @@ table tbody tr:last-child{
     text-align: center;
 }
 
-/* section6 - tickets */
+/* section - tickets */
 form>div{
     display: flex;
     margin: 20px;
@@ -199,6 +255,29 @@ footer
     text-align: right;
 }
 
+/* tablet layout */
+@media (min-width:720px){
+
+    .card-container-new{
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap:20px;
+    }
+    .card-new{
+        width: 300px;
+    }
+    .card-new>a{
+        flex-direction: column;
+        align-items: start;
+    }
+    .card-new>a>img{
+        width: 100%;
+        height: 200px;
+    }
+
+}
+
 /* desktop screens layout */
 @media only screen and (min-width:992px) {
 
@@ -213,7 +292,7 @@ footer
         padding-top: 50px;
     }
 
-    /* section1 - hero */
+    /* section - hero */
     section#hero{
         display:flex;
         align-items: center;
@@ -224,12 +303,12 @@ footer
         margin-left: 20px;
     }
 
-    /* section2 - locations */
+    /* section - locations */
     section#locations>div{
         display: flex;
     }
 
-    /* section5 - gallery */
+    /* section - gallery */
     section#gallery .image-wrapper{
         display: grid;
         grid-template-columns: 27% 2.5% 9% 2.5% 9% 2.5% 27% 2.5% 18%;
