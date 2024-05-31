@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poetsen+One&display=swap');
 
+/* navbar */
 nav{
     background-color: #FBFBFB;
     box-shadow: none;
@@ -19,12 +20,7 @@ a.brand-logo{
     font-family: "Poetsen One", sans-serif;
 }
 
-
-
-#hero h5{
-    margin: 30px;
-}
-
+/* container global settings */
 .container{
     background-color: #FBFBFB;
     margin: 20px auto;
@@ -47,11 +43,7 @@ img{
     margin-bottom: 20px;
 }
 
-tbody td:nth-child(3){
-    display: flex;
-    justify-content: center;
-}
-a.btn, input[type="submit"]{
+a.btn{
     border-radius: 10px;
     border: 2px solid #799EFF;
     border-bottom: 4px solid #799EFF;
@@ -69,6 +61,45 @@ a.btn, input[type="submit"]{
     height: 40px;
 }
 
+.wrapper.white{
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 5px 10px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.wrapper.center{
+    display: flex;
+    justify-content: center;
+}
+
+section.section>h3:first-child{
+    margin-bottom: 40px;
+}
+
+p.left-align{
+    text-align: left;
+}
+
+/* section1 - hero */
+#hero h5{
+    margin: 30px;
+}
+
+/* section2 - events */
+
+tbody td:nth-child(3){
+    display: flex;
+    justify-content: center;
+}
+
+table tbody tr:last-child{
+    border-bottom: none;
+}
+
+/* section3 - locations */
 .image-with-text{
     position: relative;
     display: inline-block;
@@ -101,31 +132,7 @@ a.btn, input[type="submit"]{
     text-align: center;
 }
 
-.wrapper.white{
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    padding: 5px 10px;
-    max-width: 600px;
-    margin: auto;
-}
-
-.wrapper.center{
-    display: flex;
-    justify-content: center;
-}
-
-/* Tried to round only the container, without the images - didn't work */
-/*
-.image-wrapper img{
-    border-radius: 0px;
-    width: 100%;
-}
-.image-wrapper{
-    border-radius: 20px;
-}
-*/
-
+/* section6 - tickets */
 form>div{
     display: flex;
     margin: 20px;
@@ -176,6 +183,7 @@ form .message *{
     
 }
 
+/* footer */
 footer
 {
     background-color: #EAEAEA;
@@ -191,21 +199,10 @@ footer
     text-align: right;
 }
 
-
-p.left-align{
-    text-align: left;
-}
-
-table tbody tr:last-child{
-    border-bottom: none;
-}
-
-section.section>h3:first-child{
-    margin-bottom: 40px;
-}
-
-
+/* desktop screens layout */
 @media only screen and (min-width:992px) {
+
+    /* container global settings */
     .nav-wrapper{
         max-width: 1200px;
         margin: 0 auto;
@@ -215,6 +212,8 @@ section.section>h3:first-child{
     .container{
         padding-top: 50px;
     }
+
+    /* section1 - hero */
     section#hero{
         display:flex;
         align-items: center;
@@ -224,9 +223,13 @@ section.section>h3:first-child{
         order:1;
         margin-left: 20px;
     }
+
+    /* section2 - locations */
     section#locations>div{
         display: flex;
     }
+
+    /* section5 - gallery */
     section#gallery .image-wrapper{
         display: grid;
         grid-template-columns: 27% 2.5% 9% 2.5% 9% 2.5% 27% 2.5% 18%;
