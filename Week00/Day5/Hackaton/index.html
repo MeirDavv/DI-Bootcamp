@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olim Events</title>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Materialize Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">Olim Events</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#events">events</a></li>
+                <li><a href="#locations">locations</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#tickets">Tickets</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- /Navbar -->
+    <!-- Sidenav -->
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="#events">events</a></li>
+        <li><a href="#locations">locations</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#tickets">Tickets</a></li>
+    </ul>
+    <!-- /Sidenav -->
+    <!-- Container -->
+    <div class="container">
+        <div class="container-wrapper">
+            <!-- Section hero -->
+            <section class="section center" id="hero">
+                <div>
+                    <h1>Find Your Event</h1>
+                    <h5>Our events<br>are special for olim</h5>
+                </div>
+                <div>                
+                    <img src="images/hero-img1.jpg" alt="">
+                </div>
+            </section>
+            <!-- /Section hero -->
+            <!-- Section events -->
+            <section class="section center" id="events">
+                <h3>Upcoming Events</h3>
+                <div class="wrapper white">
+                    <table class="highlight centered">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Topic</th>
+                                <th>Order</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>02/06/2024</td>
+                                <td>Business</td>
+                                <td><a href="#tickets" class="white btn waves-effect waves-light">Order <i class="material-icons">arrow_forward</i></a></td>
+                            </tr>
+                            <tr>
+                                <td>01/07/2024</td>
+                                <td>Cooking</td>
+                                <td><a href="#tickets" class="white btn waves-effect waves-light">Order<i class="material-icons">arrow_forward</i></a></td>
+                            </tr>
+                            <tr>
+                                <td>01/08/2024</td>
+                                <td>Sports</td>
+                                <td><a href="#tickets" class="white btn waves-effect waves-light">Order<i class="material-icons">arrow_forward</i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <!-- /Section events -->
+            <!-- Section featured events -->
+            <section class="section" id="featured_events">
+                <h5 class="bold title">Events near<span> <a href="javascript:void(0)">Ramat Gan, IL <i class="material-icons">location_on</i></a></span></h5>
+                <div class="card-container-new">
+                    <div class="card-new">
+                        <a href="#tickets">
+                            <img src="images/featured1.jpg" alt="">
+                            <div class="card-content-new">
+                                <h5 class="heavy">Business</h5>
+                                <p class="bold gray">Hosted by: Chegg Israel Meetups</p>  
+                                <div>
+                                    <div class="upper_case"><i class="material-icons">calendar_month</i> Sun, Jun 2 · 5:30 PM</div>
+                                </div>
+                                <div>
+                                    <span><i class="material-icons">check_circle</i> 69 going </span>
+                                    <span><i class="material-icons">confirmation_number</i>Free</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="card-new">
+                        <a href="#tickets">
+                            <img src="images/featured2.jpg" alt="">
+                            <div class="card-content-new">
+                                <h5 class="heavy">Cooking</h5>
+                                <p class="bold gray">Hosted by: The cookers</p>  
+                                <div>
+                                    <div class="upper_case"><i class="material-icons">calendar_month</i> Mon, Jul 1 · 5:30 PM</div>
+                                </div>
+                                <div>
+                                    <span><i class="material-icons">check_circle</i> 54 going </span>
+                                    <span><i class="material-icons">confirmation_number</i>Free</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="card-new">
+                        <a href="#tickets">
+                            <img src="images/featured3.jpg" alt="">
+                            <div class="card-content-new">
+                                <h5 class="heavy">Sports</h5>
+                                <p class="bold gray">Hosted by: Blackbone gyms</p>  
+                                <div>
+                                    <div class="upper_case"><i class="material-icons">calendar_month</i> Sun, Aug 1 · 5:30 PM</div>
+                                </div>
+                                <div>
+                                    <span><i class="material-icons">check_circle</i> 69 going </span>
+                                    <span><i class="material-icons">confirmation_number</i>Free</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="card-new">
+                        <a href="#tickets">
+                            <img src="images/featured4.jpg" alt="">
+                            <div class="card-content-new">
+                                <h5 class="heavy">Public Speaking</h5>
+                                <p class="bold gray">Hosted by: Tony Robbins</p>  
+                                <div>
+                                    <div class="upper_case"><i class="material-icons">calendar_month</i> Sun, Aug 17 · 5:30 PM</div>
+                                </div>
+                                <div>
+                                    <span><i class="material-icons">check_circle</i> 12 going </span>
+                                    <span><i class="material-icons">confirmation_number</i>Free</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="card-new">
+                        <a href="#tickets">
+                            <img src="images/featured5.jpg" alt="">
+                            <div class="card-content-new">
+                                <h5 class="heavy">Javascript</h5>
+                                <p class="bold gray">Hosted by: Javascript programmers</p>  
+                                <div>
+                                    <div class="upper_case"><i class="material-icons">calendar_month</i> Sun, Sep 27 · 5:30 PM</div>
+                                </div>
+                                <div>
+                                    <span><i class="material-icons">check_circle</i> 11 going </span>
+                                    <span><i class="material-icons">confirmation_number</i>Free</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="card-new">
+                        <a href="#tickets">
+                            <img src="images/featured6.jpg" alt="">
+                            <div class="card-content-new">
+                                <h5 class="heavy">Python</h5>
+                                <p class="bold gray">Hosted by: Python hackers</p>  
+                                <div>
+                                    <div class="upper_case"><i class="material-icons">calendar_month</i> Sun, Oct 12 · 5:30 PM</div>
+                                </div>
+                                <div>
+                                    <span><i class="material-icons">check_circle</i> 10 going </span>
+                                    <span><i class="material-icons">confirmation_number</i>Free</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+            <!-- /Section featured events -->
+            <!-- Section locations -->
+            <section class="section center" id="locations">
+                <h3>Locations</h3>
+                <div class="wrapper">
+                    <div class="image-with-text">
+                        <div class="overlay"></div>
+                        <img src="images/locations-img1.jpg" alt="">
+                        <p>Tel Aviv</p>
+                    </div>
+                    <div class="image-with-text">
+                        <div class="overlay"></div>
+                        <img src="images/locations-img2.jpg" alt="">
+                        <p>Jerusalem</p>
+                    </div>
+                </div>
+            </section>
+            <!-- /Section locations -->
+            <!-- Section  mission -->
+            <section class="section center" id="mission">
+                <h3>Mission</h3>
+                <div class="wrapper white">
+                    <p class="left-align">Our Mission <br>is to help Olim Hadashim <br>to find their communities <br>here in Israel, through our events.</p>
+                </div>
+            </section>
+            <!-- /Section  mission -->
+            <!-- Section  gallery -->
+            <section class="section center" id="gallery">
+                <h3>Gallery</h3>
+                <div class="image-wrapper">
+                    <img id="gallery1" src="images/gallery-img1.jpg" alt="">
+                    <img id="gallery2" src="images/gallery-img2.jpg" alt="">
+                    <img id="gallery3" src="images/gallery-img3.jpg" alt="">
+                    <img id="gallery4" src="images/gallery-img4.jpg" alt="">
+                    <img id="gallery5" src="images/gallery-img5.jpg" alt="">
+                    <img id="gallery6" src="images/gallery-img6.jpg" alt="">
+                    <img id="gallery7" src="images/gallery-img7.jpg" alt="">
+
+                </div>
+            </section>
+            <!-- /Section gallery -->
+            <!-- Section tickets -->
+            <section class="section center" id="tickets">
+                <h3>Tickets</h3>
+                <div class="wrapper white center">
+                    <form action="" id="events_form">
+                        <div>
+                            <label for="full_name">Full Name</label>
+                            <input type="text" placeholder="Your name here.." id="full_name">
+                        </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="email" placeholder="Your email here.." id="email">
+                        </div>
+                        <div>
+                            <label for="events">Event</label>
+                            <select id="events" form="events_form" name="event_list" class="browser-default">
+                                <option value="">--Choose an event--</option>
+                                <option value="business">Business</option>
+                                <option value="cooking">Cooking</option>
+                                <option value="sports">Sports</option>
+                                <option value="public speaking">Public Speaking</option>
+                                <option value="javascript">Javascript</option>
+                                <option value="python">Python</option>
+                            </select>
+                        </div>
+                        <div>
+                            <a onclick="message()" class="btn white waves-effect waves-light">Submit</a>                        </div>
+                        <div class="message">
+                            <div class="success" id="success">Youv'e successfuly signed up!</div>
+                            <div class="danger" id="danger">Invalid input!</div>
+                        </div>
+                        
+                    </form>
+                </div>
+            </section>
+            <!-- /Section tickets -->
+        </div>    
+    </div>
+    <!-- /Container -->
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div>
+                <h4>Footer</h4>
+                <p>Our Mission <br>is to help Olim Hadashim <br>to find their communities <br>here in Israel, through our events.</p>    
+            </div>
+            <div>
+                Copyright 2024.
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- /Footer -->
+
+    <!-- Main JS -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+
+body{
+    font-family: "Roboto", sans-serif;
+}
+
+nav{
+    background-color: #e0e0e0;
+
+    width: 100%;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 80px;
+}
+
+h4.logo{
+    color: gray;
+}
+
+a.btn{
+    background-color: #5050f8;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.hero{
+    height: 600px;
+    width: 100%;
+    position:relative;
+}
+.hero>img{
+    height: 100%;
+    width:100%;
+    object-fit: cover;
+}
+.overlay{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+}
+.section{
+    margin-bottom: 40px;
+}
+.hero-content{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.subscription-form{
+    display: flex;
+    justify-content: center;
+}
+
+input[type="email"]{
+    margin-right: 10px;
+    border-radius: 10px;
+    width: 200px;
+}
+
+.sections{
+    background-color: #f1f1f1;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 50px;
+}
+
+.section.icons{
+    display: flex;
+    justify-content: center;
+}
+
+.icons>.item{
+    text-align: center;
+    margin: 0 20px;
+}
+
+.item>i{
+    font-size: 5rem;
+    color: #5050f8;
+}
