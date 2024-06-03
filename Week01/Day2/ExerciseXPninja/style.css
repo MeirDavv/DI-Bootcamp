@@ -48,4 +48,19 @@ input::placeholder{
     font-weight: 700;
     margin-top: 10px;
 }
-
+.other_connection_methods{
+    margin: 20px 0;
+    display: flex;
+}
+.other_connection_methods>hr{
+    width: 25%;
+}
+.login-icons>*{
+    font-size: 2rem;
+    margin: 0 5px;
+    color: gray
+}
+.login>div:last-child{
+    margin-top: 100px;
+    color: gray;
+}
