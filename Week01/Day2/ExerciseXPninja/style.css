@@ -1,0 +1,51 @@
+body, #login{
+    font-family: "poppins", sans-serif;
+    letter-spacing: .5px;
+}
+
+.container{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.login{
+    padding: 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.login form>div{
+    margin: 10px 0;
+}
+
+#email,#password{
+    width: 100%;
+    height: 2rem;
+    border: 0;
+    background-color: #ededed;
+}
+input::placeholder{
+    padding-left: 10px;
+}
+
+.login form>div:nth-child(3)>*{
+    margin: 10px 0;
+    display: inline-block;
+}
+#remember{
+    border-radius: 0;
+}
+#forgot{
+    margin-left: 20px;
+    text-decoration: none;
+    color: gray;
+}
+#login{
+    width: 100%;
+    height: 2rem;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
