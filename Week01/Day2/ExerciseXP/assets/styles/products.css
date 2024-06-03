@@ -4,7 +4,7 @@ body{
 .bold{
     font-weight: 700;
 }
-.row{
+.products{
     margin: 0 auto;
     text-align: center;
 }
@@ -76,4 +76,28 @@ a.button{
     color: gray;
     border: 2px solid gray;
     border-radius: 5px;
+}
+.item:hover{
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width:600px){
+    .item{
+        width: 100%;
+    }
+}
+@media (min-width:768px){
+    .item{
+        width: 45%;
+    }
+}
+@media (min-width:992px){
+    .item{
+        width: 22.5%;
+    }
+}
+@media (min-width:1200px){
+    .item{
+        width: 15%;
+    }
 }
