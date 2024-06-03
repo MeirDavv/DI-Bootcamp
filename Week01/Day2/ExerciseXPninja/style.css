@@ -47,6 +47,7 @@ input::placeholder{
     height: 2rem;
     font-weight: 700;
     margin-top: 10px;
+    background-color: #9D27B0;
 }
 .other_connection_methods{
     margin: 20px 0;
@@ -63,4 +64,28 @@ input::placeholder{
 .login>div:last-child{
     margin-top: 100px;
     color: gray;
+}
+.register{
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    text-align: center;
+    background-image: linear-gradient(to bottom right, black, #9D27B0);
+    color: white;
+}
+.register>a{
+    border-radius: 20px;
+    border: 2px solid white;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}
+.register>h1{
+    margin:0;
+}
+.register>i{
+    font-size: 4rem;
 }
