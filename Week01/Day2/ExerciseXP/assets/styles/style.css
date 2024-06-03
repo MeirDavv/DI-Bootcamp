@@ -8,6 +8,7 @@ nav{
     position: relative;
     height:100%;
     width: 100%;
+    text-align: right;
 }
 nav *{
     color: white;
@@ -16,6 +17,11 @@ nav *{
 nav ul{
     margin: 0;
     display: inline-block;
+}
+nav>i{
+    position:absolute;
+    top:20px;
+    left:20px;
 }
 nav a{
     text-decoration: none;
