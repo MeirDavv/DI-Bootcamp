@@ -35,6 +35,7 @@ body{
     border-radius: 5px;
     overflow: hidden;
     position: relative;
+    box-sizing:border-box;
 }
 .card-top{
     background-color: white;
@@ -104,5 +105,12 @@ main{
         flex-wrap: wrap;
         max-width: 1400px;
         margin: auto;
+    }
+
+    #card2{
+        margin-top: 150px;
+    }
+    #card3{
+        margin-top:100px;
     }
 }
