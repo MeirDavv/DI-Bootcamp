@@ -1,0 +1,28 @@
+body{
+    font-family: "Roboto", sans-serif;
+}
+nav{
+    display: flex;
+}
+.logo{
+    display: inline-block;
+    color: blue;
+}
+.nav-links{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.nav-links ul{
+    margin:0;
+}
+.nav-links li{
+    display: inline-block;
+    list-style-type: none;
+    text-decoration: none;
+}
+nav a{
+    text-decoration: none;
+    color: gray;
+    font-weight:700;
+}
