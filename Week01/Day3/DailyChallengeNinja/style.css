@@ -1,0 +1,21 @@
+.container{
+    display: grid;
+    border: 2px solid black;
+    grid-template-columns: repeat(16,40px);
+    grid-gap: 5px;
+}
+.item1{
+    height: 40px;
+    width: 40px;
+    background-color: #FF7100;
+}
+.item2{
+    height: 40px;
+    width: 40px;
+    background-color: #FFB26D;
+}
+.item3{
+    height: 40px;
+    width: 40px;
+    background-color: #A84B00;
+}
