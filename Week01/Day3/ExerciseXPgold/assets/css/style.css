@@ -1,0 +1,108 @@
+body{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+.container{
+    text-align: center;
+    
+}
+.hero>h1:first-child{
+    font-weight: 500;
+    padding-top: 50px;
+    margin: 0 0 50px;
+}
+.numbers-container>div{
+    display: flex;
+    flex-direction: column;
+}
+.number-presentation{
+    width: 300px;
+    font-weight: 600;
+    font-stretch: condensed;
+}
+.number-presentation>div:first-child{
+    color: #5B69C4;
+    font-size: 2rem;
+}
+.number-presentation>p{
+    color: gray;
+    text-transform: uppercase;
+}
+.card{
+    margin: 20px auto;
+    width: 300px;
+    box-shadow: 0px -3px 5px 1px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+.card-top{
+    background-color: white;
+    margin: 0;
+}
+.card-top>p{
+    text-align: left;
+    padding: 20px;
+    margin: 0;
+}
+.card-bottom{
+    width: 100%;
+    height: 100px;
+    bottom:0;
+    position: relative;
+}
+.card-bottom-content{
+    padding-top: 50px;
+    color: white;
+}
+#card1 .card-bottom{
+    background-color: #F78B8A;
+}
+#card2 .card-bottom{
+    background-color: #5C6AC4;
+}
+#card3 .card-bottom{
+    background-color: #47C1BF;
+}
+.person-name{
+    font-weight: 600;
+}
+.person-title{
+    font-weight: 100;
+}
+.card-image{
+    width: 70px; 
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top:0;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.card-image>img{
+    object-fit: cover;
+    width: 100%;
+    text-align: center;
+}
+main{
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(/assets/images/atlas.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+@media only screen and (min-width:600px){
+    .numbers-container{
+        display: flex;
+        justify-content: space-around;
+        max-width: 1400px;
+        margin:auto;
+    }
+    .cards-container{
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1400px;
+        margin: auto;
+    }
+}
