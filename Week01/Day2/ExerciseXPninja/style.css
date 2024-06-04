@@ -50,12 +50,17 @@ input::placeholder{
     background-color: #9D27B0;
 }
 .other_connection_methods{
-    margin: 20px 0;
-    display: flex;
+    margin: 30px 0 10px;
 }
-.other_connection_methods>hr{
-    width: 25%;
+.other_connection_methods>div{
+    margin: 0 auto;
+    margin-top: -20px;
+    z-index: 1;
+    background-color: #f8f8f8;
+    width: 50%;
+    text-align: center;
 }
+
 .login-icons>*{
     font-size: 2rem;
     margin: 0 5px;
