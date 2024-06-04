@@ -32,7 +32,11 @@ nav a{
     padding: 10px 5px;
     line-height: 1rem;
 }
-.btn{
+a.active-link{
+    color: #195375;
+    font-weight: 700;
+}
+.btn-blue{
     color: #439FD5;
     padding: 5px 10px;
     border: 3px solid #439FD5;
@@ -50,4 +54,53 @@ main{
 .hero>div{
     font-size: 1.2rem;
     margin-bottom: 20px;
+}
+.card-container{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.card{
+    width: 300px;
+    margin: 10px;
+}
+.promotion{
+    color: white;
+    background-color: #439FD5;
+
+}
+.card-offer{
+    background-color: white;
+}
+.card-offer>i{
+    font-size: 50px;
+    margin: 20px;
+}
+.price{
+    font-size: 60px;
+    font-weight: 100;
+}
+.btn-green{
+    text-decoration: none;
+    color:white;
+    background-color: #75B27F;
+    padding: 10px 20px;
+    margin: 20px 0;
+    display: inline-block;
+}
+em{
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.card-features{
+    text-align: left;
+    padding: 20px;
+    background-color: #195375;
+    color: white;
+}
+.card-features ul{
+    padding: 0;
+}
+.card-features li{
+    list-style-type: none;
 }
