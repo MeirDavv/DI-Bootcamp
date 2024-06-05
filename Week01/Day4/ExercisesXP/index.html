@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- FA icons -->
+    <script src="https://kit.fontawesome.com/282860e229.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    
+</head>
+<body>
+    <!-- Header -->
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">Navbar scroll</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active bg-black" aria-current="page" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact <span class="badge rounded-pill bg-secondary">3</span></a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="email" placeholder="Email" aria-label="Email">
+              <input class="form-control me-2" type="password" placeholder="Password" aria-label="Password">
+              <button class="btn btn-success text-nowrap" type="submit">Sign In</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <!-- /Navbar -->
+    <!-- /Header -->
+    <!-- Main -->
+    <main>
+        <!-- Jumbotron -->
+        <div class="p-5 bg-light">
+            <h1 class="m-3">Hello, World!</h1>
+            <h5 class="m-3">This is Exercise #9. It includes a large callout called a jumborton and three supporing pieces of content.</h5>
+            <a class="m-3 btn btn-primary" href="" role="button">Learn More</a>
+        </div>
+        <!-- Jumbotron -->
+        <!-- Section grid -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pt-3">
+                    <h4>Heading</h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia consequuntur error nesciunt, rem sapiente soluta vero, vitae officia sunt sequi ipsa doloribus earum ut! Nobis doloremque pariatur corporis iste minima.</p>
+                    <a href="#" class="btn btn-outline-dark"><i class="fa-solid fa-chart-simple"></i> View Details</a>
+                </div>
+                <div class="col-md-4 pt-3">
+                    <h4>Heading</h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia consequuntur error nesciunt, rem sapiente soluta vero, vitae officia sunt sequi ipsa doloribus earum ut! Nobis doloremque pariatur corporis iste minima.</p>
+                    <a href="#" class="btn btn-outline-dark"><i class="fa-solid fa-chart-simple"></i> View Details</a>
+                </div>
+                <div class="col-md-4 pt-3">
+                    <h4>Heading <span class="badge bg-info ms-1">New</span></h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia consequuntur error nesciunt, rem sapiente soluta vero, vitae officia sunt sequi ipsa doloribus earum ut! Nobis doloremque pariatur corporis iste minima.</p>
+                    <a href="#" class="btn btn-outline-dark"><i class="fa-solid fa-chart-simple"></i> View Details</a>
+                </div>
+            </div>
+            
+        </div>
+        <!-- /Section grid -->
+    </main>
+    <!-- /Main -->
+</body>
+</html>
