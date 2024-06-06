@@ -5,8 +5,7 @@ body{
     letter-spacing: -0.5px;
     background: radial-gradient(#0F172A, #0F172A);
     background-repeat: no-repeat;
-    background-size: auto 100vh;
-    overflow: hidden;
+    overflow-y: scroll;
     margin: 0;
 }
 
@@ -41,9 +40,11 @@ a{
 header{
     display: flex;
     flex-direction: column;
-    height: 90vh;
+    
     justify-content: space-between;
     position: sticky;
+    top:0;
+    height: 90vh;
 }
 
 header, main{
@@ -85,11 +86,14 @@ header ul{
     border: 1px solid #45556F;
 
 }
-.nav-item a:hover, .nav-item a:active{
+.nav-item a:hover, .nav-item a:active {
     span>hr{
         width:5rem;
+        border-color: white;
     }
-
+    span{
+        color:white
+    }
 }
 
 .social-media-icons{
@@ -100,11 +104,9 @@ header ul{
     margin: 0.5rem;
 }
 
-main{
-    overflow-y: scroll;
-    max-height: 90vh ;
+.social-media-icons a>i:hover{
+    color:white;
 }
-
 main::-webkit-scrollbar{
     display: none;
 }
@@ -148,11 +150,14 @@ ul.skills>li{
     color: #57D9C7;
     padding: 0.5rem 1rem;
     border-radius: 2rem;
-    margin: 0.25rem
+    margin: 0.25rem;
 }
 
 @media only screen and (max-width:960px){
     .container{
-        flex-direction: column
+        flex-direction: column;
+    }
+    header{
+        position:static
     }
 }
