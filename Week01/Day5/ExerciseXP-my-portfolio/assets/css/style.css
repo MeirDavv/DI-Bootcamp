@@ -17,6 +17,10 @@ h1, h2, h3, h4, h5, h6{
 p, div, ul, li, span,i,hr{
     color: #727F94
 }
+ul{
+    list-style-type: none;
+    padding-left: 0;
+}
 a{
     text-decoration: none;
     color: white;
@@ -29,6 +33,9 @@ a{
     width:80%;
     margin: 0 auto;
     
+}
+.section{
+    padding-bottom: 7rem
 }
 
 header{
@@ -109,4 +116,36 @@ main p{
 
 .scroll-wrapper{
     padding-bottom: 5rem;
+}
+.card{
+    display:flex;
+    align-items: baseline;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.1s ease-in-out;
+    margin-bottom: 1rem;
+}
+
+.card:hover{
+    background-color: hsla(0, 0%, 90%, 0.06);
+}
+
+
+.card-left{
+    flex: 1;
+    margin-right: 2rem;
+}
+.card-right{
+    flex: 4;
+}
+ul.skills{
+    display: flex;
+    flex-wrap: wrap;
+}
+ul.skills>li{
+    background-color: #112F3C;
+    color: #57D9C7;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    margin: 0.25rem
 }
