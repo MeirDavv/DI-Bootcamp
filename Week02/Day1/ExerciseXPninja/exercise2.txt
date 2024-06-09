@@ -1,0 +1,9 @@
+''' 
+Question: Read about alias, and try to open a python console with the command:
+$ py
+'''
+Answer:
+You need to go to the terminal and run nano ~/.bash_profile (to edit the bash file)
+Then at the bottom of the file, type: alias py='python3'
+Then you can save by clicking 'ctrl'+'X' then press 'y' to confirm then press 'enter'
+Now you  can run the command py (it will run python3)

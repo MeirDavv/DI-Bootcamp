@@ -1,0 +1,4 @@
+'''
+Question: Read about the PATH variable. Try to explain why you can call python3 if you aren’t in the executable directory.
+'''
+Answer: The shell has a variable named $PATH, using that variable it looks for programs so that even if we run a program not from it's current location in terminal, it still looks at that variable and looks for programs there and finally manage to open it.
