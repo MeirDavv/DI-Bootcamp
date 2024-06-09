@@ -1,5 +1,5 @@
-print(5<3)
-print(3==3)
-print(3 == "3")
-
-print("Hello" == "hello")
+print(5<3) #False
+print(3==3) #True
+print(3 == "3") #False
+print("3" > 3)  #Error
+print("Hello" == "hello") #False 
