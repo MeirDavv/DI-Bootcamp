@@ -13,4 +13,5 @@ elif (month<=11 and month>=9):
 else:
     season = "Winter"
 
-print(season)
+if(season):
+    print(season)
