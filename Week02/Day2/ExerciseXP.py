@@ -155,3 +155,52 @@ while (topping!= 'quit'):
     print(f"All the toppings are: {all_toppings}")
     topping = input("Would you like another topping? type 'quit' if not ")
 
+#Exercise9
+'''
+1. A movie theater charges different ticket prices depending on a person’s age.
+if a person is under the age of 3, the ticket is free.
+if they are between 3 and 12, the ticket is $10.
+if they are over the age of 12, the ticket is $15.
+
+2. Ask a family the age of each person who wants a ticket.
+
+3. Store the total cost of all the family’s tickets and print it out.
+
+4. A group of teenagers are coming to your movie theater and want to watch a movie that is restricted for people between the ages of 16 and 21.
+Given a list of names, write a program that asks teenager for their age, if they are not permitted to watch the movie, remove them from the list.
+At the end, print the final list.
+'''
+
+'''Answer 1-3:'''
+amount = int(input("Hi there. How many tickets would you like? "))
+print("Let's go over each family member please.")
+total_cost = 0
+below_3_cost = 0
+between_3_and_12_cost = 10
+above_12_cost = 15
+currency_sign = '$'
+for i in range(amount):
+    age = int(input("What's your age? "))
+    while (age <= 0):
+        print("Invalid! Try again. ")
+        age = int(input("What's your age? "))
+    if (age < 3):
+        total_cost += below_3_cost
+    elif (age<=12):
+        total_cost += between_3_and_12_cost
+    else:
+        total_cost += above_12_cost
+print(f"The total cost is: {total_cost}{currency_sign}. ")
+
+'''Answer 4:'''
+lst_names = ['David', 'Josh', 'Dan', 'Moses', 'Yossi']
+lst_names_copy = lst_names[:]
+min_age = 16
+max_age = 21
+
+for name in lst_names_copy:
+    age = int(input(f"Hey {name}, what's your age?"))
+    if(age > min_age and age < max_age):
+        lst_names.remove(name)
+    
+print(lst_names)
