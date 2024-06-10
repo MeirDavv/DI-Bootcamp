@@ -44,10 +44,8 @@ print(f"last character: {string[-1]}")
 
 #exercise3
 string_length = len(string)
-for end_index in range(1, string_length + 1):
-    for start_index in range(end_index):
-        print (string[start_index], end='')
-    print()
+for i in range(1,string_length+1):
+    print (string[:i])
 
 #exercise4
 lst = list(string)
