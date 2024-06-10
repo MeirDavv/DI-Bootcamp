@@ -89,6 +89,7 @@ for i in range(start,end + 1):
     lst2.append(item)
 print(lst2)
 
+
 #Exercise5
 '''
 Use a for loop to print all numbers from 1 to 20, inclusive.
@@ -101,6 +102,7 @@ for i in range(1,21):
 for i in range(1,21,2):
     print (i)
 
+
 #Exercise6
 '''
 Write a while loop that will continuously ask the user for their name, unless the input is equal to your name.
@@ -111,6 +113,7 @@ while True:
     user_name = input("Type a name: ")
     if (user_name.lower() == name.lower()):
         break
+
 
 #Exercise7
 '''
@@ -130,3 +133,25 @@ if(fruit in lst):
     print("You chose one of your favorite fruits! Enjoy!")
 else:
     print("You chose a new fruit. I hope you enjoy")
+
+
+#Exercise8
+'''
+Write a loop that asks a user to enter a series of pizza toppings, when the user inputs ‘quit’ stop asking for toppings.
+As they enter each topping, print a message saying you’ll add that topping to their pizza.
+Upon exiting the loop print all the toppings on the pizza pie and what the total price is (10 + 2.5 for each topping).
+'''
+
+topping = input("Would you like a topping? type 'quit' if not ")
+pizza_cost = 10
+topping_cost = 2.5
+total_cost = pizza_cost
+all_toppings = ""
+while (topping!= 'quit'):
+    total_cost += topping_cost
+    all_toppings += topping + " "
+    print(f"Added {topping} topping to the pizza")
+    print(f"The total cost is: {total_cost}")
+    print(f"All the toppings are: {all_toppings}")
+    topping = input("Would you like another topping? type 'quit' if not ")
+
