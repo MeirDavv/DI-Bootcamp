@@ -204,3 +204,49 @@ for name in lst_names_copy:
         lst_names.remove(name)
     
 print(lst_names)
+
+#Exercise10
+'''
+Using the list below :
+
+sandwich_orders = ["Tuna sandwich", "Pastrami sandwich", "Avocado sandwich", "Pastrami sandwich", "Egg sandwich", "Chicken sandwich", "Pastrami sandwich"]
+
+The deli has run out of pastrami, use a while loop to remove all occurrences of “Pastrami sandwich” from sandwich_orders.
+We need to prepare the orders of the clients:
+Create an empty list called finished_sandwiches.
+One by one, remove each sandwich from the sandwich_orders while adding them to the finished_sandwiches list.
+After all the sandwiches have been made, print a message listing each sandwich that was made, such as:
+I made your tuna sandwich
+I made your avocado sandwich
+I made your egg sandwich
+I made your chicken sandwich
+'''
+
+
+sandwich_orders = ["Tuna sandwich", "Pastrami sandwich", "Avocado sandwich", "Pastrami sandwich", "Egg sandwich", "Chicken sandwich", "Pastrami sandwich"]
+run_out_of = 'Pastrami sandwich'
+lst_length = len(sandwich_orders)
+index = 0
+
+
+
+while (index < lst_length):
+    if(sandwich_orders[index] == run_out_of):
+        sandwich_orders.remove(run_out_of)
+        index -=1
+        lst_length -=1
+    index += 1
+
+print(sandwich_orders)
+
+finished_sandwiches = []
+for order in sandwich_orders[:]:
+    finished_sandwiches.append(order)
+    sandwich_orders.remove(order)
+
+for order in finished_sandwiches:
+    print(f"I made your {order.lower()}")
+
+
+
+
