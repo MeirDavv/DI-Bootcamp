@@ -62,8 +62,107 @@ for student,avg in student_averages.items():
     print(f"Name of student {student}. Average grade: {avg}. Letter grade: {student_letter_grades[student]}.")
 
 
-
 # Hints:
 # Use loops to iterate through the student_grades dictionary.
 # You may use sum() and len() functions to help calculate averages.
 # Initialize empty dictionaries for student_averages and student_letter_grades before filling them with data.
+
+
+
+# 🌟 Exercise 2 : Advanced Data Manipulation And Analysis
+# Instructions
+# In this exercise, you will analyze data from a hypothetical online retail company to gain insights into sales trends and customer behavior. The data is represented as a list of dictionaries, where each dictionary contains information about a single purchase.
+
+
+
+sales_data = [
+    {"customer_id": 1, "product": "Smartphone", "price": 600, "quantity": 1, "date": "2023-04-03"},
+    {"customer_id": 2, "product": "Laptop", "price": 1200, "quantity": 1, "date": "2023-04-04"},
+    {"customer_id": 1, "product": "Laptop", "price": 1000, "quantity": 1, "date": "2023-04-05"},
+    {"customer_id": 2, "product": "Smartphone", "price": 500, "quantity": 2, "date": "2023-04-06"},
+    {"customer_id": 3, "product": "Headphones", "price": 150, "quantity": 4, "date": "2023-04-07"},
+    {"customer_id": 3, "product": "Smartphone", "price": 550, "quantity": 1, "date": "2023-04-08"},
+    {"customer_id": 1, "product": "Headphones", "price": 100, "quantity": 2, "date": "2023-04-09"},
+]
+
+
+# Tasks:
+# Total Sales Calculation: Calculate the total sales for each product category (i.e., the total revenue generated from each type of product). Use a loop to iterate through the data and a dictionary to store the total sales for each product.
+
+total_sales = {}
+
+for sale in sales_data:
+    product_name = sale['product']
+    revenue = sale['price'] * sale['quantity']
+    if(product_name in total_sales.keys()):
+        total_sales[product_name] += revenue
+    else:
+        total_sales[product_name] = revenue
+
+# Customer Spending Profile: Determine the total amount spent by each customer. Use a dictionary to maintain the sum of amounts each customer has spent.
+
+customer_spending_profile = {}
+
+for sale in sales_data:
+    customer_id = sale['customer_id']
+    revenue = sale['price'] * sale['quantity']
+    if(customer_id in customer_spending_profile.keys()):
+        customer_spending_profile[customer_id] += revenue
+    else:
+        customer_spending_profile[customer_id] = revenue
+
+print(customer_spending_profile)
+
+# Sales Data Enhancement:
+
+# Add a new field to each transaction called “total_price” that represents the total price for that transaction (quantity * price).
+# Use a loop to modify the sales_data list with this new information.
+
+for sale in sales_data:
+    sale['total_price'] = sale['price'] * sale['quantity']
+
+# High-Value Transactions:
+
+# Using list comprehension, create a list of all transactions where the total price is greater than $500.
+# Sort this list by the total price in descending order.
+
+transactions_greater_than_500 = [sale for sale in sales_data if sale['total_price'] > 500]
+print(transactions_greater_than_500)
+transactions_greater_than_500 = sorted(transactions_greater_than_500, key=lambda d: d['total_price'], reverse=True)
+print(transactions_greater_than_500)
+
+# Customer Loyalty Identification:
+
+# Identify any customer who has made more than one purchase, suggesting potential loyalty.
+# Use a dictionary to count purchases per customer, then use a loop or comprehension to identify customers meeting the loyalty criterion.
+
+purchases_per_customer = {}
+
+for sale in sales_data:
+    customer_id = sale['customer_id']
+    if(customer_id in purchases_per_customer.keys()):
+        purchases_per_customer[customer_id] += 1
+    else:
+        purchases_per_customer[customer_id] = 1
+
+print(purchases_per_customer)
+
+loyal_customers = [customer_id for customer_id,purchases in purchases_per_customer.items() if purchases > 1]
+print(loyal_customers)
+
+# Bonus: Insights and Analysis:
+
+# Calculate the average transaction value for each product category.
+
+average_transaction_value = {}
+for product in total_sales.keys():
+    total_quantity = sum ([transaction['quantity'] for transaction in sales_data if transaction['product'] == product])
+    average_transaction_value[product] = total_sales[product] / total_quantity
+
+# Identify the most popular product based on the quantity sold.
+
+product_quanitities = {product : int(total_sales[product]/average_transaction_value[product]) for product in total_sales.keys()}
+most_popular_product = max(product_quanitities, key=product_quanitities.get)
+print(most_popular_product)
+# Provide insights into how these analyses could inform the company’s marketing strategies.
+
