@@ -85,3 +85,56 @@ def main():
     print(f"Reversed Morse: {reverse_morse}")
 
 main()
+
+
+# Exercise 3 : Box Of Stars
+# Instructions
+# Write a function named box_printer that takes any amount of strings (not in a list) and prints them, one per line, in a rectangular frame.
+# For example calling box_printer("Hello", "World", "in", "reallylongword", "a", "frame") will result as:
+# ******************
+# * Hello          *
+# * World          *
+# * in             *
+# * reallylongword *
+# * a              *
+# * frame          *
+# ******************
+
+def box_printer (*args):
+    longest_word = max(args, key=len) 
+    len_longest_word = len(longest_word)
+    total_len = len_longest_word + 4 #2 stars on each side of the words, and 2 more spaces = 4 additional characters that add to the length
+    ch = '*'
+    start = 2 # '* ' is printed before the word in each line - which means 2 characters
+    print(ch*total_len)
+    for word in args:
+        till_end = total_len - start - len(word) - 1 #the amount of spaces till end of line 
+        print(f'{ch} {word}'+ ' '*till_end + ch)
+    print(ch*total_len)
+
+box_printer("Hello", "World", "in", "reallylongword", "a", "frame")
+
+
+# Exercise 4 : What Is The Purpose Of This Code?
+# Analyse this code before executing it. What is the purpose of this code?
+# def insertion_sort(alist):
+#    for index in range(1,len(alist)):
+
+#      currentvalue = alist[index]
+#      position = index
+
+#      while position>0 and alist[position-1]>currentvalue:
+#          alist[position]=alist[position-1]
+#          position = position-1
+
+#      alist[position]=currentvalue
+
+# alist = [54,26,93,17,77,31,44,55,20]
+# insertion_sort(alist)
+# print(alist)
+
+'''
+Analyzation:
+The code above sorts the list,
+The way it sorts the list is to iterate over each item and look at the items before it, if the item before it is bigger than the current one it replaces between their values and the checks the items before them both and make sure all the sequence before them are sorted too. it does that till the end and when it reaches the end of the list we get a fully sorted list in an ascending way.
+'''
