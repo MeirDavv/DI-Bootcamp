@@ -317,7 +317,7 @@ def print_results(correct_count, incorrect_count, data, wrong_answers):
             index+=1
         
         if(index > 3):
-            print("More than 3 answers were wrong. Game over. Play again! ")
+            print("More than 3 answers were wrong. Play again! ")
 
 quiz(data)
 
