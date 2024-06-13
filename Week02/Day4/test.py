@@ -1,3 +1,5 @@
+import random
+
 # from functools import reduce
 # def change_lst(lst):
 #     lst[0] = 10
@@ -25,4 +27,8 @@ filtered_people = list(filter(lambda s : len(s)<=4, people))
 say_hello = list(map(lambda name : (f"Hello {name}!"), filtered_people))
 
 print(say_hello)
+
+generated = round(random.uniform(163, 243),1)
+print(generated)
+
 

@@ -87,12 +87,12 @@ make_shirt ('small', 'I love coding')
 args_list = ['large', 'I love everything']
 make_shirt(*args_list)
 
-args_dict = {
+kwargs_dict = {
     'size' : 'medium',
     'printed_message' : 'I love myself'
 }
 
-make_shirt(**args_dict)
+make_shirt(kwargs_dict)
 
 
 # 🌟 Exercise 6 : Magicians …
@@ -120,3 +120,168 @@ make_great(magician_names)
 # Call the function show_magicians() to see that the list has actually been modified.
 
 show_magicians(magician_names)
+
+
+# 🌟 Exercise 7 : Temperature Advice
+# Instructions
+# Create a function called get_random_temp().
+# This function should return an integer between -10 and 40 degrees (Celsius), selected at random.
+# Test your function to make sure it generates expected results.
+
+def get_random_temp():
+    min = -10
+    max = 40
+    generated = random.randint(min, max)
+    return generated
+
+print(get_random_temp())
+
+# Create a function called main().
+# Inside this function, call get_random_temp() to get a temperature, and store its value in a variable.
+# Inform the user of the temperature in a friendly message, eg. “The temperature right now is 32 degrees Celsius.”
+
+# Let’s add more functionality to the main() function. Write some friendly advice relating to the temperature:
+# below zero (eg. “Brrr, that’s freezing! Wear some extra layers today”)
+# between zero and 16 (eg. “Quite chilly! Don’t forget your coat”)
+# between 16 and 23
+# between 24 and 32
+# between 32 and 40
+
+def main():
+    generated_temp = get_random_temp()
+    print(f"The temperature right now is {generated_temp} degrees Celcius")
+
+    if(generated_temp < 0):
+        print("Brrr, that's freezing today")
+    elif(generated_temp < 16):
+        print("Quite Chilly! Don't forget your coat")
+    elif(generated_temp < 24):
+        print("A bit cold out there!")
+    elif(generated_temp < 32):
+        print("pretty warm outside. A shirt is enough")
+    elif(generated_temp < 40):
+        print("It's really  HOT outside!")
+
+# Change the get_random_temp() function:
+# Add a parameter to the function, named ‘season’.
+# Inside the function, instead of simply generating a random number between -10 and 40, set lower and upper limits based on the season, eg. if season is ‘winter’, temperatures should only fall between -10 and 16.
+
+def get_random_temp(season):
+    seasons_dict = {
+        'winter' : (-10,16),
+        'autumn' : (16,24),
+        'spring' : (24,32),
+        'summer' : (32,40)
+     }
+    min,max = seasons_dict[season]
+    generated = random.randint(min, max)
+    return generated
+
+# Now that we’ve changed get_random_temp(), let’s change the main() function:
+# Before calling get_random_temp(), we will need to decide on a season, so that we can call the function correctly. Ask the user to type in a season - ‘summer’, ‘autumn’ (you can use ‘fall’ if you prefer), ‘winter’, or ‘spring’.
+# Use the season as an argument when calling get_random_temp().
+
+def main():
+    season = input("Please type a season (Choose: 'winter', 'summer', 'spring', 'autumn'): ")
+    generated_temp = get_random_temp(season)
+    print(f"The temperature right now is {generated_temp} degrees Celcius")
+
+    if(generated_temp < 0):
+        print("Brrr, that's freezing today")
+    elif(generated_temp < 16):
+        print("Quite Chilly! Don't forget your coat")
+    elif(generated_temp < 24):
+        print("A bit cold out there!")
+    elif(generated_temp < 32):
+        print("pretty warm outside. A shirt is enough")
+    elif(generated_temp < 40):
+        print("It's really  HOT outside!")
+
+main()
+# Bonus: Give the temperature as a floating-point number instead of an integer.
+
+def get_random_temp(season):
+    seasons_dict = {
+        'winter' : (-10,16),
+        'autumn' : (16,24),
+        'spring' : (24,32),
+        'summer' : (32,40)
+     }
+    min,max = seasons_dict[season]
+    generated = round(random.uniform(min, max),1)
+    print(generated)
+    return generated
+
+main()
+
+# Bonus: Instead of asking for the season, ask the user for the number of the month (1 = January, 12 = December). Determine the season according to the month.
+
+def get_season():
+    month = int(input("Please provide a number 1-12 which represents a month"))
+    if month in [3,4,5]:
+        return "spring"
+    elif month in [6,7,8]:
+        return "summer"
+    elif month in [9,10,11]:
+        return "autumn"
+    return "winter"
+
+def main():
+    season = get_season()
+    print(f"The season is {season}")
+    generated_temp = get_random_temp(season)
+    print(f"The temperature right now is {generated_temp} degrees Celcius")
+
+    if(generated_temp < 0):
+        print("Brrr, that's freezing today")
+    elif(generated_temp < 16):
+        print("Quite Chilly! Don't forget your coat")
+    elif(generated_temp < 24):
+        print("A bit cold out there!")
+    elif(generated_temp < 32):
+        print("pretty warm outside. A shirt is enough")
+    elif(generated_temp < 40):
+        print("It's really  HOT outside!")
+
+main()
+
+# 🌟 Exercise 8 : Star Wars Quiz
+# Instructions
+# This project allows users to take a quiz to test their Star Wars knowledge.
+# The number of correct/incorrect answers are tracked and the user receives different messages depending on how well they did on the quiz.
+
+# Here is an array of dictionaries, containing those questions and answers
+
+data = [
+    {
+        "question": "What is Baby Yoda's real name?",
+        "answer": "Grogu"
+    },
+    {
+        "question": "Where did Obi-Wan take Luke after his birth?",
+        "answer": "Tatooine"
+    },
+    {
+        "question": "What year did the first Star Wars movie come out?",
+        "answer": "1977"
+    },
+    {
+        "question": "Who built C-3PO?",
+        "answer": "Anakin Skywalker"
+    },
+    {
+        "question": "Anakin Skywalker grew up to be who?",
+        "answer": "Darth Vader"
+    },
+    {
+        "question": "What species is Chewbacca?",
+        "answer": "Wookiee"
+    }
+]
+
+
+# Create a function that asks the questions to the user, and check his answers. Track the number of correct, incorrect answers. Create a list of wrong_answers
+
+# Create a function that informs the user of his number of correct/incorrect answers.
+# Bonus : display to the user the questions he answered wrong, his answer, and the correct answer.
+# If he had more then 3 wrong answers, ask him to play again.
