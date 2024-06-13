@@ -281,7 +281,43 @@ data = [
 
 
 # Create a function that asks the questions to the user, and check his answers. Track the number of correct, incorrect answers. Create a list of wrong_answers
-
 # Create a function that informs the user of his number of correct/incorrect answers.
 # Bonus : display to the user the questions he answered wrong, his answer, and the correct answer.
 # If he had more then 3 wrong answers, ask him to play again.
+
+
+def quiz (data):
+    print("Welcome to the quiz! Let's start with the questions: ")
+    correct_count = 0
+    incorrect_count = 0
+    wrong_answers = []
+    for item in data:
+        user_answer = input(item["question"] + ": ")
+
+        if (user_answer == item["answer"]):
+            correct_count += 1
+        else:
+            incorrect_count += 1
+            wrong_answers.append({"question" : item["question"], "answer": user_answer})
+
+    print_results(correct_count, incorrect_count, data, wrong_answers)
+
+
+def print_results(correct_count, incorrect_count, data, wrong_answers):
+    print(f"You got {correct_count} correct answers. And {incorrect_count} incorrect answers.")
+    print("Let's go over the incorrect ones")
+    index = 0
+    for item in data:
+        if(item["question"] == wrong_answers[index]["question"]):
+            print(f"For question- {item["question"]}")
+            print(f"Your answer was- {wrong_answers[index]["answer"]}")
+            print(f"While the correct one is- {item["answer"]}")
+            print("--")
+
+            index+=1
+        
+        if(index > 3):
+            print("More than 3 answers were wrong. Game over. Play again! ")
+
+quiz(data)
+
