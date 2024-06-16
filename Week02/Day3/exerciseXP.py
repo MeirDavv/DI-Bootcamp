@@ -92,7 +92,7 @@ brand['number_stores'] = 2
 
 # 4. Print a sentence that explains who Zaras clients are.
 
-print(f"Zara clients are from {', '.join(list(brand['major_color'].keys()))} and they buy {", ".join(brand['type_of_clothes'])} products.")
+print(f"Zara clients are from {', '.join(brand['type_of_clothes'])}.")
 
 # 5. Add a key called country_creation with a value of Spain.
 
@@ -185,28 +185,18 @@ print(dict_2)
 # Use a method to recreate the 3rd result. Hint: The 3rd result is sorted alphabetically.
 
 sorted_users = sorted(users)
-dict_3 = {}
-
-for i,key in enumerate(sorted_users):
-    dict_3[key] = i
+dict_3 = {user:i for i,user in enumerate(users)}
+print(dict_3)
 
 
 # Only recreate the 1st result for:
 # The characters, which names contain the letter “i”.
 
-dict_4 = {}
-
-for i,key in enumerate(users):
-    if ('i' in key):
-        dict_4[key] = i
-
+dict_4 = {user:i for i,user in enumerate(users) if 'i' in user}
 print(dict_4)
+
 # The characters, which names start with the letter “m” or “p”.
 
-dict_5 = {}
-
-for i,key in enumerate(users):
-    if (key[0].lower() == 'm' or key[0].lower() == 'p'):
-        dict_5[key] = i
+dict_5 = {user:i for i,user in enumerate(users) if user[0].lower() in ['m','p']}
 
 print(dict_5)

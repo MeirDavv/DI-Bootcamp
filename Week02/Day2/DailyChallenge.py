@@ -14,9 +14,8 @@ number: 17 - length 6 ➞ [17, 34, 51, 68, 85, 102]
 number = int(input("Enter a number please: "))
 length = int(input("Enter a length please: "))
 lst = []
-for i in range(length):
-    lst.append(number)
-    number += lst[0]
+for i in range(1, length+1):
+    lst.append(number * i)
 print(lst)
 
 
@@ -41,12 +40,12 @@ user_word = input("Please provide a word: ")
 if (len(user_word) < 1):
     print("That's an empty word!")
 
-first_char = user_word[0]
-new_word = first_char
+prev_char = user_word[0]
+new_word = prev_char
 
 for letter in user_word:
-    if (letter !=first_char):
-        first_char = letter
+    if (letter !=prev_char):
+        prev_char = letter
         new_word += letter
 
 print(new_word)
