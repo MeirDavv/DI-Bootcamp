@@ -9,9 +9,9 @@ Concatenate my_fav_numbers and friend_fav_numbers to a new variable called our_f
 '''
 
 my_fav_numbers = set()
-my_fav_numbers.add(3)
-my_fav_numbers.add(7)
-my_fav_numbers.remove(7)
+my_fav_numbers.update((3,7))
+last_number = 7
+my_fav_numbers.remove(last_number)
 friend_fav_numbers = {6,9}
 our_fav_numbers = my_fav_numbers.union(friend_fav_numbers)
 print(our_fav_numbers)
@@ -47,7 +47,7 @@ basket = ["Banana", "Apples", "Oranges", "Blueberries"]
 basket.remove("Banana")
 basket.remove("Blueberries")
 basket.append("Kiwi")
-basket.append("Apples")
+basket.insert(0, "Apples")
 count = basket.count("Apples")
 print(count)
 basket.clear()
@@ -79,14 +79,12 @@ while (start<=5):
     start+=0.5
 print(lst)
 
-lst2 = []
-start = 3
-end = 10
-for i in range(start,end + 1):
-    item = i/2
-    if(item.is_integer()):
-        item = int(item)
-    lst2.append(item)
+start=1.5
+jump=0.5
+lst2 = [start + jump*i for i in range(8)]
+for i in range(len(lst2)):
+    if(lst2[i].is_integer()):
+        lst2[i] = int(lst2[i])
 print(lst2)
 
 
@@ -179,11 +177,15 @@ below_3_cost = 0
 between_3_and_12_cost = 10
 above_12_cost = 15
 currency_sign = '$'
+ages = []
 for i in range(amount):
     age = int(input("What's your age? "))
     while (age <= 0):
         print("Invalid! Try again. ")
         age = int(input("What's your age? "))
+    ages.append(age)
+
+for age in ages:
     if (age < 3):
         total_cost += below_3_cost
     elif (age<=12):
@@ -198,12 +200,16 @@ lst_names_copy = lst_names[:]
 min_age = 16
 max_age = 21
 
-for name in lst_names_copy:
+ages = []
+for name in lst_names:
     age = int(input(f"Hey {name}, what's your age?"))
+    ages.append(age)
+
+for age in ages:
     if(age > min_age and age < max_age):
-        lst_names.remove(name)
+        lst_names_copy.remove(name)
     
-print(lst_names)
+print(lst_names_copy)
 
 #Exercise10
 '''
@@ -230,19 +236,13 @@ index = 0
 
 
 
-while (index < lst_length):
-    if(sandwich_orders[index] == run_out_of):
-        sandwich_orders.remove(run_out_of)
-        index -=1
-        lst_length -=1
-    index += 1
+while (run_out_of in sandwich_orders):
+    sandwich_orders.remove(run_out_of)
 
 print(sandwich_orders)
 
 finished_sandwiches = []
-for order in sandwich_orders[:]:
-    finished_sandwiches.append(order)
-    sandwich_orders.remove(order)
+finished_sandwiches.extend(sandwich_orders)
 
 for order in finished_sandwiches:
     print(f"I made your {order.lower()}")
