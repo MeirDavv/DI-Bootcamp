@@ -36,19 +36,20 @@ class Siamese (Cat):
 
 # Create a list called all_cats, which holds three cat instances : one Bengal, one Chartreux and one Siamese.
 
-cat1 = Bengal('Mitzi', 3)
-cat2 = Chartreux('Jazz', 4)
-cat3 = Siamese('Caty', 5)
+if __name__ == '__main__':
+    cat1 = Bengal('Mitzi', 3)
+    cat2 = Chartreux('Jazz', 4)
+    cat3 = Siamese('Caty', 5)
 
-all_cats = [cat1, cat2 , cat3]
+    all_cats = [cat1, cat2 , cat3]
 
-# Those three cats are Sara’s pets. Create a variable called sara_pets which value is an instance of the Pet class, and pass the variable all_cats to the new instance.
+    # Those three cats are Sara’s pets. Create a variable called sara_pets which value is an instance of the Pet class, and pass the variable all_cats to the new instance.
 
-sara_pets = Pets(all_cats)
+    sara_pets = Pets(all_cats)
 
-# Take all the cats for a walk, use the walk method.
+    # Take all the cats for a walk, use the walk method.
 
-sara_pets.walk()
+    sara_pets.walk()
 
 
 # 🌟 Exercise 2 : Dogs
@@ -88,20 +89,20 @@ class Dog:
             winner = "Draw! Nobody won."
 
         return winner
-    
-dog1 = Dog('Jacky', 12, 20)
-dog2 = Dog('Tommy', 14, 20)
-dog3 = Dog('Bobby', 20, 20)
 
-print(dog1.bark())
-print(dog2.run_speed())
-print(dog2.fight(dog3))
+if __name__ == '__main__':    
+    dog1 = Dog('Jacky', 12, 20)
+    dog2 = Dog('Tommy', 14, 20)
+    dog3 = Dog('Bobby', 20, 20)
+
+    print(dog1.bark())
+    print(dog2.run_speed())
+    print(dog2.fight(dog3))
 
 
 # 🌟 Exercise 3 : Dogs Domesticated
 # Instructions
 # Create a new python file and import your Dog class from the previous exercise.
-'''Done in exerciseXP-pt2.py'''
 # In the new python file, create a class named PetDog that inherits from Dog.
 # Add an attribute called trained to the __init__ method, this attribute is a boolean and the value should be False by default.
 # Add the following methods:
@@ -114,3 +115,69 @@ print(dog2.fight(dog3))
 # “dog_name stands on his back legs”.
 # “dog_name shakes your hand”.
 # “dog_name plays dead”.
+'''
+Done in exerciseXP-pt2.py
+'''
+
+# Exercise 4 : Family
+# Instructions
+# Create a class called Family and implement the following attributes:
+
+# members: list of dictionaries
+# last_name : (string)
+
+# Implement the following methods:
+
+# born: adds a child to the members list (use **kwargs), don’t forget to print a message congratulating the family.
+# is_18: takes the name of a family member as a parameter and returns True if they are over 18 and False if not.
+# family_presentation: a method that prints the family’s last name and all the members’ details.
+
+# Create an instance of the Family class, with the last name of your choice, and the below members. Then call all the methods you created in Point 2.
+
+#     [
+#         {'name':'Michael','age':35,'gender':'Male','is_child':False},
+#         {'name':'Sarah','age':32,'gender':'Female','is_child':False}
+#     ]
+
+class Family:
+    def __init__(self, members : list[dict], last_name : str) -> None:
+        self.members = members
+        self.last_name = last_name
+
+    def born(self, **member : dict) -> None:
+        self.members.append(member)
+        print("Congratulations for the newborn baby! :))")
+
+    def is_18 (self, name : str) -> bool:
+        for member in self.members:
+            if member['name'] == name:
+                if member['age'] > 18:
+                    return True
+                return False
+
+        return ("Not exist!")
+            
+    def family_presentation(self):
+        print(f"Welcome to {self.last_name} family!")
+        for member in self.members:
+            print(f"{member['name']} is {member['age']} years old, a {member['gender']}, and a ",end='')
+            if member['is_child']:
+                print("child.", end="")
+                
+            else:
+                print("parent.", end="")
+            print()
+            
+
+if __name__ == '__main__':
+    members = [
+        {'name':'Michael','age':35,'gender':'Male','is_child':False},
+        {'name':'Sarah','age':32,'gender':'Female','is_child':False}
+    ]
+    last_name = "Cohen"
+    family = Family(members,last_name)
+    newborn = {'name':'Lia','age':0,'gender':'Female','is_child':True}
+    family.born(**newborn)
+    print(family.is_18('Moni'))
+    print(family.is_18('Michael'))
+    family.family_presentation()
