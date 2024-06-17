@@ -160,13 +160,7 @@ class Family:
     def family_presentation(self):
         print(f"Welcome to {self.last_name} family!")
         for member in self.members:
-            print(f"{member['name']} is {member['age']} years old, a {member['gender']}, and a ",end='')
-            if member['is_child']:
-                print("child.", end="")
-                
-            else:
-                print("parent.", end="")
-            print()
+            print (member)
             
 
 if __name__ == '__main__':
@@ -181,3 +175,61 @@ if __name__ == '__main__':
     print(family.is_18('Moni'))
     print(family.is_18('Michael'))
     family.family_presentation()
+
+
+# Exercise 5 : TheIncredibles Family
+# Instructions
+# Create a class called TheIncredibles. This class should inherit from the Family class:
+# This is no random family they are an incredible family, therefore the members attributes, will be a list of dictionaries containing the additional keys : power and incredible_name. (See Point 4)
+
+class TheIncredibles(Family):
+
+# Add a method called use_power, this method should print the power of a member only if they are over 18 years old. If not raise an exception (look up exceptions) which stated they are not over 18 years old.
+
+    def use_power(self, member_name):
+        for member in self.members:
+            if(member['name'] == member_name):
+                break
+        
+        age = member['age']
+        if age > 18:
+            power = member['power']
+            print(f"Power of member {member_name} is {power}")
+
+        else:
+            raise Exception(f"{member_name} is not over 18 years old!")
+
+
+# Add a method called incredible_presentation which :
+
+# Print a sentence like “*Here is our powerful family **”
+# Prints the family’s last name and all the members’ details (ie. use the super() function, to call the family_presentation method)
+
+    def incredible_presentation(self):
+        print("Here is our powerful family")
+        super().family_presentation()
+
+
+# Create an instance of the Incredibles class, with the “Incredibles” last name, and the below members.
+
+if __name__ == '__main__':
+    last_name = 'Incredibles'
+    members = [
+        {'name':'Michael','age':35,'gender':'Male','is_child':False,'power': 'fly','incredible_name':'MikeFly'},
+        {'name':'Sarah','age':32,'gender':'Female','is_child':False,'power': 'read minds','incredible_name':'SuperWoman'}
+    ]
+    incredible_family = TheIncredibles(members, last_name)
+
+
+# Call the incredible_presentation method.
+
+    incredible_family.incredible_presentation()
+
+# Use the born method inherited from the Family class to add Baby Jack with the following power: “Unknown Power”.
+
+    incredible_newborn = {'name':'Jack','age':0,'gender':'Male','is_child':True,'power': 'Unknown Power'}
+    incredible_family.born(**incredible_newborn)
+
+# Call the incredible_presentation method again.
+
+    incredible_family.incredible_presentation()
