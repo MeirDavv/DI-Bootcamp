@@ -72,3 +72,36 @@ and finally it generates a sentence with given amount of words, that are picked 
 
 if __name__ == '__main__':
     main()
+
+
+# 🌟 Exercise 2: Working With JSON
+# Instructions
+import json
+sampleJson = """{ 
+   "company":{ 
+      "employee":{ 
+         "name":"emma",
+         "payable":{ 
+            "salary":7000,
+            "bonus":800
+         }
+      }
+   }
+}"""
+
+
+# Access the nested “salary” key from the JSON-string above.
+
+data = json.loads(sampleJson)
+salary = data['company']['employee']['payable']['salary']
+print(salary)
+
+# Add a key called “birth_date” to the JSON-string at the same level as the “name” key.
+
+data['company']['employee']['birth_date'] = '01/01/2001'
+print(data)
+
+# Save the dictionary as JSON to a file.
+
+with open ('sampleJson.json', mode='w') as file:
+    json.dump(data, file)
