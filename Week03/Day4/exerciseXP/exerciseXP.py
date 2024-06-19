@@ -103,5 +103,8 @@ print(data)
 
 # Save the dictionary as JSON to a file.
 
-with open ('sampleJson.json', mode='w') as file:
+file_name = 'sampleJson.json'
+dir_path = os.path.dirname(os.path.realpath(__file__))
+file_path = dir_path + '/' + file_name
+with open (file_path, mode='w') as file:
     json.dump(data, file)
