@@ -85,11 +85,48 @@ if __name__ == '__main__':
 # Bonus:
 # Create a class called TextModification that inherits from Text.
 
+import string
+import nltk
+from nltk.corpus import stopwords
+import re
+
+class TextModification(Text):
+
 # Implement the following methods:
 # a method that returns the text without any punctuation.
+
+    def without_punctuation(self) -> str:
+        punctuation = string.punctuation
+        translation_table = str.maketrans('','',punctuation)
+        return self.text.translate(translation_table)
+
+    def without_stop_words(self) -> str:
+        nltk.download('stopwords')
+        stop_words = set(stopwords.words('english'))
+        words = self.text.split()
+        filtered_words = [word for word in words if word.lower() not in stop_words]
+        return ' '.join(filtered_words)
+        
+
+    def without_special_chars(self) -> str:
+        pattern = r'[^a-zA-Z0-9\s]'
+        return re.sub(pattern,'',self.text)
+
+
 # a method that returns the text without any english stop-words (check out what this is !!).
 # a method that returns the text without any special characters.
 # Note: Instead of creating a child class, you could also implements those methods as static methods in the Text class.
 
 # Note: Feel free to implement/create any attribute, method or function needed to make this work, be creative :)
 
+def main():
+    text3 = TextModification("Hi, my name is: Meir. And as you can see %$^r4 I'm great!")
+    
+    print(text3.without_punctuation())
+
+    print(text3.without_stop_words())
+
+    print(text3.without_special_chars())
+
+if __name__ == '__main__':
+    main()
