@@ -24,12 +24,6 @@ def print_results(results_dict : dict[int]) -> None:
 
     print(message)
 
-def update_results_dict(current_result : str, results : dict[int]) -> dict[int]:
-
-    
-
-    return results
-
 def main():
 
     results = {
