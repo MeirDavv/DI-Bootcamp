@@ -33,3 +33,63 @@ Polymorphism is when we have multiple classes with the same method name/ if thes
 Method Resolution Order is the order in which methods are being searched for and executed in the classes hierarchy. The order is from bottom to top and from left to right
 '''
 
+
+
+# Part 2: Create A Deck Of Cards Class.
+# The Deck of cards class should NOT inherit from a Card class.
+
+# The requirements are as follows:
+
+# The Card class should have a suit (Hearts, Diamonds, Clubs, Spades) and a value (A,2,3,4,5,6,7,8,9,10,J,Q,K)
+# The Deck class :
+# should have a shuffle method which makes sure the deck of cards has all 52 cards and then rearranges them randomly.
+# should have a method called deal which deals a single card from the deck. After a card is dealt, it should be removed from the deck.
+
+import random
+
+
+class Card:
+    def __init__(self, suit : str, value : str) -> None:
+        self.suit = suit
+        self.value = value
+
+    def __str__(self) -> None:
+        return(f'card suit = {self.suit}, card value = {self.value}')
+
+class Deck:
+    def __init__(self) -> None:
+        self.suit_list = ['Hearts','Diamonds','Clubs','Spades']
+        self.value_list = ['A','1','2','3','4','5','6','7','8','9','10','J','Q','K']
+        self.cards = []
+        self.create_deck()
+
+    def create_deck(self) -> None:
+        for suit in self.suit_list:
+            for value in self.value_list:
+                card = Card(suit,value)
+                self.cards.append(card)
+    
+    def check_deck(self) -> bool:
+        #### check deck of cards contain the 52 cards
+        cards_combinations = [(suit,value) for suit in self.suit_list for value in self.value_list]
+        for card in self.cards:
+            if (card.suit,card.value) in cards_combinations:
+                cards_combinations.remove((card.suit,card.value))
+            
+        return not cards_combinations #if list is empty = all cards were found
+
+    def shuffle(self):
+        if not self.check_deck():
+            self.create_deck() #In casedeck doesnt include the 52 cards
+        random.shuffle(self.cards)
+
+    def deal(self) -> 'Card':
+        deal_card = self.cards.pop()
+        return deal_card
+    
+
+#tests:
+deck = Deck()
+deck.shuffle()
+card = deck.deal()
+print(card)
