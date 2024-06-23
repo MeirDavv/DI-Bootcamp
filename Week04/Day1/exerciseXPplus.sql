@@ -9,8 +9,8 @@
 
 CREATE TABLE students (
 	id serial primary key,
-	last_name varchar,
-	first_name varchar,
+	last_name varchar(50),
+	first_name varchar(50),
 	birth_date date
 );
 

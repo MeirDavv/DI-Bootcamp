@@ -6,8 +6,8 @@ create table items(
 
 create table customers(
 	id serial primary key,
-	first_name varchar,
-	last_name varchar
+	first_name varchar(50),
+	last_name varchar(50)
 );
 
 insert into items (title,price) VALUES
