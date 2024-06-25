@@ -92,15 +92,51 @@
 
 -- Find out how many rentals are still outstanding (ie. have not been returned to the store yet).
 
+-- //select count(*) from rental as outstanding_rentals where return_date is null
+
 -- Find the 30 most expensive movies which are outstanding (ie. have not been returned to the store yet)
+
+-- //select film.title, film.rental_rate
+-- //from film
+-- //inner join inventory
+-- //on film.film_id = inventory.film_id
+-- //inner join rental
+-- //on rental.inventory_id = inventory.inventory_id
+-- //where rental.return_date is null
+-- //order by film.rental_rate desc
+-- //limit 30
 
 -- Your friend is at the store, and decides to rent a movie. He knows he wants to see 4 movies, but he can’t remember their names. Can you help him find which movies he wants to rent?
 -- The 1st film : The film is about a sumo wrestler, and one of the actors is Penelope Monroe.
 
+-- //select film.title 
+-- //from film
+-- //inner join film_actor on film.film_id = film_actor.film_id
+-- //inner join actor on actor.actor_id = film_actor.actor_id
+-- //where actor.first_name ilike 'Penelope' and actor.last_name ilike 'Monroe' and film.description ilike '%sumo wrestler%'
+
 -- The 2nd film : A short documentary (less than 1 hour long), rated “R”.
+
+-- //select film.title
+-- //from film 
+-- //inner join film_category on film.film_id = film_category.film_id
+-- //inner join category on category.category_id = film_category.category_id
+-- //where category.name ilike 'Documentary' and film.length < 60 and film.rating = 'R'
 
 -- The 3rd film : A film that his friend Matthew Mahan rented. He paid over $4.00 for the rental, and he returned it between the 28th of July and the 1st of August, 2005.
 
+-- //select film.title 
+-- //from film
+-- //inner join inventory on inventory.film_id = film.film_id
+-- //inner join rental on inventory.inventory_id = rental.inventory_id
+-- //inner join customer on rental.customer_id = customer.customer_id
+-- //where customer.first_name = 'Matthew' and customer.last_name = 'Mahan' and film.rental_rate > 4.00 and rental.return_date > '2005/07/28' and rental.return_date < '2005/08/01'
+
 -- The 4th film : His friend Matthew Mahan watched this film, as well. It had the word “boat” in the title or description, and it looked like it was a very expensive DVD to replace.
 
-
+select film.title 
+from film
+inner join inventory on inventory.film_id = film.film_id
+inner join rental on inventory.inventory_id = rental.inventory_id
+inner join customer on rental.customer_id = customer.customer_id
+where customer.first_name = 'Matthew' and customer.last_name = 'Mahan' and (film.title ilike '%boat%' or film.description ilike '%boat%') order by film.replacement_cost limit 1
