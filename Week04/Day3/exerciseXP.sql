@@ -48,7 +48,7 @@
 -- 	//film_id int references new_film(id) on delete cascade,
 -- 	//language_id int references language(language_id),
 -- 	//title varchar(50),
--- 	//score int,
+-- 	//score int check (score>0 AND score<=10),
 -- 	//review_text text,
 -- 	//last_update date
 -- //);
@@ -74,9 +74,21 @@
 -- Instructions
 -- Use UPDATE to change the language of some films. Make sure that you use valid languages.
 
+
+
+-- //update film
+-- //set language_id = (select language_id from language where name = 'French')
+-- //where title = 'Ace Goldfinger'
+
 -- Which foreign keys (references) are defined for the customer table? How does this affect the way in which we INSERT into the customer table?
 
+-- //? address_id is a foreign key for customer table. It affects the way in which we insert into customer table by whihc it cannot add an address_id that doesnt exist in address table.
+
 -- We created a new table called customer_review. Drop this table. Is this an easy step, or does it need extra checking?
+
+-- //drop table customer_review
+
+-- //explanation: it did work, it is an easy step, didnt require extra checking.
 
 -- Find out how many rentals are still outstanding (ie. have not been returned to the store yet).
 
