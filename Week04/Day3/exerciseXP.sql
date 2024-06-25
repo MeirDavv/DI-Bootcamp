@@ -134,9 +134,9 @@
 
 -- The 4th film : His friend Matthew Mahan watched this film, as well. It had the word “boat” in the title or description, and it looked like it was a very expensive DVD to replace.
 
-select film.title 
-from film
-inner join inventory on inventory.film_id = film.film_id
-inner join rental on inventory.inventory_id = rental.inventory_id
-inner join customer on rental.customer_id = customer.customer_id
-where customer.first_name = 'Matthew' and customer.last_name = 'Mahan' and (film.title ilike '%boat%' or film.description ilike '%boat%') order by film.replacement_cost limit 1
+-- //select film.title 
+-- //from film
+-- //inner join inventory on inventory.film_id = film.film_id
+-- //inner join rental on inventory.inventory_id = rental.inventory_id
+-- //inner join customer on rental.customer_id = customer.customer_id
+-- //where customer.first_name = 'Matthew' and customer.last_name = 'Mahan' and (film.title ilike '%boat%' or film.description ilike '%boat%') order by film.replacement_cost limit 1
