@@ -30,7 +30,7 @@ def insert_into_database(name:str ,capital:str,flag:str, subregion:str, populati
     try:
         cursor.execute(query,(name,capital,flag,subregion,population))
         connection.commit()
-        print("Added {name} country successfuly!")
+        print(f"Added {name} country successfuly!")
     except Exception as e:
         print(f"Error: {e}")
     finally:
