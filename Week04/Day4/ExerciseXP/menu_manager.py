@@ -12,5 +12,21 @@ class MenuManager:
         rows = (cursor.fetchall())
         connection.close()
 
-        return rows
+        if rows:
+            return rows
+        return None
     
+    @classmethod
+    def all_items(cls, search_by_value) -> tuple:
+        connection, cursor = config.create_connection()
+
+        search_by_field = config.NAME_FIELD
+        query = f"SELECT * FROM {config.TABLE}"
+        cursor.execute(query)
+
+        rows = (cursor.fetchall())
+        connection.close()
+
+        if rows:
+            return rows
+        return None

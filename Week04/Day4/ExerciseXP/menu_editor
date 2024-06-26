@@ -1,0 +1,54 @@
+from menu_item import MenuItem
+from menu_manager import MenuManager
+
+def show_user_menu():
+    user_menu = '''
+    Welcome to the restaurant menu manager!
+        Menu:
+        (V) - View an item
+        (A) - Add an item
+        (D) - Delete an item
+        (U) - Update an item
+        (S) - Show the menu '''
+    print(user_menu)
+    user_choice = input ("  : ").upper()
+
+    if user_choice == 'V':
+        view_item_from_menu()
+    elif user_choice == 'A':
+        add_item_to_menu()
+    elif user_choice == 'D':
+        remove_item_from_menu()
+    elif user_choice == 'U':
+        update_item_from_menu()
+    elif user_choice == 'S':
+        show_restaurant_menu()
+    else:
+        print("Invalid input, try again!")
+        show_user_menu()
+
+def view_item_from_menu():
+    name = input("Please provide the name of the item you would like to view: ")
+    print(MenuManager.get_by_name(name))
+
+def add_item_to_menu():
+    name = input("Please provide the name of the item you want to add to the menu: ")
+    price = input("Please provide the price of the item: ")
+    item = MenuItem(name,price)
+    item.save()
+
+def remove_item_from_menu():
+    name = input("Please provide the name of the item you want to remove from the menu: ")
+    item = MenuItem(name, None)
+    item.remove()
+
+def update_item_from_menu():
+    name = input("Please provide the name of the item you want to update in the menu: ")
+    price = input("Please provide the price of the item: ")
+    item = MenuItem(name,price)
+    new_name = input("Please provide new name value: ")
+    new_price = input("Please provide new price value: ")
+    item.update(new_name,new_price)
+
+def show_restaurant_menu():
+    print(MenuManager.all_items())
