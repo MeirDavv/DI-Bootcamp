@@ -1,13 +1,41 @@
-// Using a DOM property, retrieve the h1 and console.log it.
 
-// Using DOM methods, remove the last paragraph in the <article> tag.
+// Retrieve the form and console.log it.
 
-// Add a event listener which will change the background color of the h2 to red, when it’s clicked on.
+let form = document.getElementsByTagName('form')[0];
+console.log(form);
 
-// Add an event listener which will hide the h3 when it’s clicked on (use the display:none property).
+// Retrieve the inputs by their id and console.log them.
 
-// Add a <button> to the HTML file, that when clicked on, should make the text of all the paragraphs, bold.
+form.addEventListener("change", formChange);
+function formChange(){
+    let fname = document.getElementById("fname").value;
+    let lname = document.getElementById("lname").value;
+    console.log(fname, lname);
+    // Retrieve the inputs by their name attribute and console.log them.
+    let firstname = document.getElementsByName("firstname")[0].value;
+    let lastname = document.getElementsByName("lastname")[0].value;
+    console.log(firstname, lastname);
+}
 
-// BONUS : When you hover on the h1, set the font size to a random pixel size between 0 to 100.(Check out this documentation)
+// When the user submits the form (ie. submit event listener)
+// use event.preventDefault(), why ?
+// get the values of the input tags,
+// make sure that they are not empty,
+// create an li per input value,
+// then append them to a the <ul class="usersAnswer"></ul>, below the form.
 
-// BONUS : When you hover on the 2nd paragraph, it should fade out (Check out “fade css animation” on Google)
+form.addEventListener("submit", formSubmit);
+function formSubmit(event){
+    event.preventDefault()
+    let fname = document.getElementById("fname").value;
+    let lname = document.getElementById("lname").value;
+    if (fname!=="" && lname!==""){
+        let ulElement = document.getElementsByClassName('usersAnswer')[0];
+        let liFname=document.createElement("li");
+        liFname.innerText = fname;
+        let liLname=document.createElement("li");
+        liLname.innerText = lname;
+        ulElement.appendChild(liFname);
+        ulElement.appendChild(liLname);
+    }
+}
