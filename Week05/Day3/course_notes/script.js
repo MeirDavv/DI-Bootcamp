@@ -1,16 +1,8 @@
-function getAges(myAge){
-    let mumAge = 2*myAge;
-    let dadAge = 1.2*mumAge;
-    return {
-        Mum : mumAge,
-        Dad : dadAge
-    }
-}
+let mydiv = document.querySelector('div')
+mydiv.style.width = '200px';
+mydiv.style.height = '200px';
+mydiv.style.border = '1px solid black'
 
-console.log (getAges(23))
-
-let div = document.getElementById("firstdiv")
-console.log(div)
-
-let h2 = document.getElementById("h2infirstdiv")
-console.log(h2);
+mydiv.addEventListener('mouseover', function(e){
+    e.target.style.backgroundColor = 'red';
+})
