@@ -18,6 +18,6 @@ function returnItemsToDefault(){
     }
 }
 // Call the function highlight() on mouseover (ie. when the mouse pointer is moved onto the paragraph), and the function returnItemsToDefault() on mouseout (ie. when the mouse pointer is moved out of the paragraph).
-pElement = document.getElementsByTagName('p')[0];
+let pElement = document.getElementsByTagName('p')[0];
 pElement.addEventListener("mouseover",highlight);
 pElement.addEventListener("mouseout",returnItemsToDefault);

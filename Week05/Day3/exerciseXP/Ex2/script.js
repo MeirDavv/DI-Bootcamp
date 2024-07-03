@@ -26,7 +26,7 @@ function formChange(){
 
 form.addEventListener("submit", formSubmit);
 function formSubmit(event){
-    event.preventDefault()
+    event.preventDefault();
     let fname = document.getElementById("fname").value;
     let lname = document.getElementById("lname").value;
     if (fname!=="" && lname!==""){
