@@ -37,3 +37,34 @@ h1 {
   background-color: white;
   border: none;
 }
+
+.listTasks {
+  background-color: white;
+  width: 400px;
+  margin: 10px auto;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.listTasks ul {
+  padding: 0;
+  margin: 0;
+}
+
+.listTasks li {
+  list-style-type: none;
+  text-align: left;
+  font-size: 2rem;
+  margin: 10px 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid blue;
+}
+
+.listTasks li > i:first-child {
+  color: red;
+  font-style: normal;
+}
+
+.listTasks li > input[type="checkbox"] {
+  zoom: 1.5;
+}
