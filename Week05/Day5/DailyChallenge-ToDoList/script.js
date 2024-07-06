@@ -16,10 +16,16 @@ function addTask(e){
 
     const taskName = formData.get('taskName');
 
-    
-
-    if (taskName !==undefined && taskName!==""){
+    if (taskName !==undefined && taskName!=="")
         tasks.push(taskName);
+    renderTasks(tasks);
+    form.reset();
+}
+
+function renderTasks(tasks){
+    clearTasks();
+    for (let task of tasks){
+        taskName = task
 
         let liElement = document.createElement("li");
 
@@ -28,7 +34,6 @@ function addTask(e){
 
         let checkBoxElement = document.createElement("input")
         checkBoxElement.setAttribute("type","checkbox")
-        console.log(checkBoxElement)
 
         let taskElement = document.createElement("span");
         taskElement.innerText = taskName;
@@ -39,7 +44,8 @@ function addTask(e){
 
         ulElement.appendChild(liElement);
     }
+}
 
-    const taskElement = document.getElementsByName('taskName')[0];
-    taskElement.value = ""
+function clearTasks(){
+    ulElement.innerHTML ="";
 }
