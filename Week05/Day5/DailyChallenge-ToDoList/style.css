@@ -63,8 +63,22 @@ h1 {
 .listTasks li > i:first-child {
   color: red;
   font-style: normal;
+  cursor: pointer;
 }
 
 .listTasks li > input[type="checkbox"] {
   zoom: 1.5;
+}
+
+span.done {
+  text-decoration: line-through;
+  color: red;
+}
+
+#clearButton {
+  margin-right: 0;
+  color: blue;
+  border: none;
+  background-color: white;
+  font-size: 1.5rem;
 }
