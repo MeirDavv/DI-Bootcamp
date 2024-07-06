@@ -1,0 +1,39 @@
+body {
+  height: 95vh;
+  background-color: #ff4c55;
+  width: 100%;
+}
+
+.container {
+  text-align: center;
+  margin: auto;
+  font-family: "roboto", sans-serif;
+}
+
+h1 {
+  color: white;
+}
+
+.taskName {
+  width: 400px;
+  height: 50px;
+  font-size: 2rem;
+  border: none;
+}
+
+.input-container {
+  position: relative;
+  width: 400px;
+  margin: auto;
+}
+
+#submit-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  font-size: 1.5rem;
+  color: blue;
+  background-color: white;
+  border: none;
+}
