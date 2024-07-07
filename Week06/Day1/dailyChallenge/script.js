@@ -16,3 +16,23 @@ const groceries = {
 displayGroceries = () => groceries.fruits.forEach(fruit => console.log(fruit));
 
 displayGroceries();
+
+cloneGroceries = () => {
+    user = client;
+    client = 'Betty'
+    console.log(user);
+    // No. the modification will not appear on the user variable since copy was by value
+    
+
+    shopping = groceries;
+    groceries.totalPrice = "35$"
+    console.log(shopping);
+    // Yes. The modification will appear since it was passed by reference.
+
+    groceries.other.paid = false;
+    console.log(shopping);
+    // Yes. The modification will appear since it was passed by reference.
+
+}
+
+cloneGroceries();
