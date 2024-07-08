@@ -8,6 +8,7 @@
 // Hint : Find an array method that returns the value of the first element in an array that pass a test.
 // Use the cars inventory below:
 
+/*
 const inventory = [
   { id: 1, car_make: "Lincoln", car_model: "Navigator", car_year: 2009 },
   { id: 2, car_make: "Mazda", car_model: "Miata MX-5", car_year: 2001 },
@@ -15,6 +16,7 @@ const inventory = [
   { id: 4, car_make: "Land Rover", car_model: "Defender Ice Edition", car_year: 2010 },
   { id: 5, car_make: "Honda", car_model: "Accord", car_year: 1995 },
 ];
+*/
 
 /*
 function getCarHonda(carInventory){
@@ -30,6 +32,7 @@ console.log(getCarHonda(inventory));
 // Hint : Check out this tutorial on the sort method
 // Use the cars inventory below:
 
+/*
 function sortCarInventoryByYear(carInventory){
     return carInventory.sort(compareByYear);
 }
@@ -51,3 +54,5 @@ function compareByYear(car1,car2){
 
 sortCarInventoryByYear(inventory);
 console.log(inventory);
+
+*/
