@@ -56,6 +56,7 @@ console.log(winners)
 
 // 3. Find and display the total score of the users. (Hint: The total score is 71)
 
-
+/*
 const totalScore = gameInfo.reduce((accumulator,value) => accumulator + value.score,0);
 console.log(totalScore);
+*/
