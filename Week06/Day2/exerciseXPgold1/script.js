@@ -53,10 +53,12 @@ The last printed i is the last index which is 5, but the i itself cant be access
 // Instructions
 // Using a method, take this array const array = [[1],[2],[3],[[[4]]],[[[5]]]] and modify it to look like this array: [1,2,3,[4],[5]].
 // Bonus Try to do it on one line.
+
 /*
 const array = [[1],[2],[3],[[[4]]],[[[5]]]]
-console.log(array.flat());
+console.log(array.flat(2));
 */
+
 // Using a method, take this array const greeting = [["Hello", "young", "grasshopper!"], ["you", "are"], ["learning", "fast!"]]; and modify it to look like this array: ["Hello young grasshopper!","you are","learning fast!"].
 
 const greeting = [["Hello", "young", "grasshopper!"], ["you", "are"], ["learning", "fast!"]];
@@ -71,8 +73,5 @@ console.log(strGreeting);
 // Turn the trapped number 3 const trapped = [[[[[[[[[[[[[[[[[[[[[[[[[[3]]]]]]]]]]]]]]]]]]]]]]]]]] into: [3]
 
 const trapped = [[[[[[[[[[[[[[[[[[[[[[[[[[3]]]]]]]]]]]]]]]]]]]]]]]]]]
-while(trapped.some(Array.isArray)) {
-    let unTrapped = trapped.flat();
-}
-
-console.log(trapped)
+const unTrapped = trapped.flat(Infinity);
+console.log(unTrapped)
