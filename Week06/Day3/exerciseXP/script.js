@@ -122,7 +122,62 @@ Option #2 will extend the class dog the right way, since the constructor exists,
 
 // 🌟 Exercise 6 : Challenges
 // Evaluate these (ie True or False)
-
+/*
 console.log([2] === [2])
 console.log({} === {})
+*/
+/*
+ * both expressions will always return false, since javascript compares by reference not value. Object and arrays are stored in different places in the memory so comparing them by reference (even if they include same values) will result in a false.
+*/
 
+
+// What is, for each object below, the value of the property number and why?
+
+/*
+const object1 = { number: 5 }; 
+const object2 = object1; 
+const object3 = object2; 
+const object4 = { number: 5};
+
+object1.number = 4;
+console.log(object2.number)
+console.log(object3.number)
+console.log(object4.number)
+*/
+
+/**
+ * Object1's number value: 4. Explanation - property value was reassigned
+ * Object2's number value: 4. Explanation - object2 is a copy of object1 which makes them have the same reference - they point to the same object whenever 1 object change its value it appears on the other object too.
+ * Object3's number value: 4. Explanation - object3 has the same refernece as object2 which has the same reference as object1 changing the value of object1 will be presented in object 3 which will have the same value - 4.
+ * Object5's number value: 5. Explanation - object4 is a seperate object in an independent address in the memory. changing other objects won't affect its value, it remains 4.
+ */
+
+
+
+// Create a class Animal with the attributes name, type and color. The type is the animal type, for example: dog, cat, dolphin ect …
+
+class Animal{
+    constructor(name,type,color){
+        this.name = name;
+        this.type = type;
+        this.color = color;
+    }
+}
+
+// Create a class Mamal that extends from the Animal class. Inside the class, add a method called sound(). This method takes a parameter: the sound the animal makes, and returns the details of the animal (name, type and color) as well as the sound it makes.
+
+class Mamal extends Animal{
+    constructor(name,type,color){
+        super(name,type,color)
+    }
+
+    sound(sound){
+        return `${sound} I'm a ${this.type}, named ${this.name} and I'm ${this.color}`
+    }
+}
+
+// Create a farmerCow object that is an instance of the class Mamal. The object accepts a name, a type and a color and calls the sound method that “moos” her information.
+// For example: Moooo I'm a cow, named Lily and I'm brown and white
+
+farmerCow = new Mamal('Lily','cow','brown and white');
+console.log(farmerCow.sound('Moooo'));
