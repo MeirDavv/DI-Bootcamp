@@ -64,8 +64,6 @@ const videosData = [
 
 // Bonus: Loop through the array to instantiate those instances.
 
-let videos = [];
-for (let videoData of videosData){
-    let video = new Video(videoData.title, videoData.uploader, videoData.time)
-    videos.push(video);
-}
+let videos = videosData.map((videoData) => {
+    return new Video(videoData.title, videoData.uploader, videoData.time)
+})
