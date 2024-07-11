@@ -1,0 +1,46 @@
+@import url("https://fonts.cdnfonts.com/css/sega-logo-font");
+
+body {
+  background-color: purple;
+  background-image: url("./imgs/background-img.png");
+  margin: 0;
+  font-family: "roboto", sans-serif;
+}
+
+nav {
+  display: flex;
+  background-color: lightgreen;
+  padding: 10px;
+  margin: 0;
+}
+
+#logo {
+  padding: 10px;
+  font-family: "SEGA LOGO FONT", sans-serif;
+}
+
+#filter {
+  margin-left: 40px;
+  width: 50%;
+  max-width: 800px;
+}
+
+#cardsList {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+#card {
+  background-color: lightblue;
+  margin: 20px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#card > img {
+  border-radius: 50%;
+  background-color: darkblue;
+}
