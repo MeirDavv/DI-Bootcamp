@@ -65,3 +65,60 @@ async function fetchGifs2(){
         console.error(err)
     }
 }
+
+fetchGifs2();
+
+
+// 🌟 Exercise 3 : Async Function
+// Instructions
+// Improve the program below :
+
+// fetch("https://www.swapi.tech/api/starships/9/")
+//     .then(response => response.json())
+//     .then(objectStarWars => console.log(objectStarWars.result));
+// Create an async function, that will await for the above GET request.
+// The program shouldn’t contain any then() method.
+// Make sure to check the status of the Response and to catch any occuring errors.
+
+async function fetchApi(){
+    const apiUrl = 'https://www.swapi.tech/api/starships/9/';
+    try{
+        const response = await fetch(apiUrl);
+
+        if(!response.ok){
+            throw new Error(`HTTP error! Status: ${response.status}`)
+        }
+
+        const data = await response.json();
+        const objectStarWars = await data.result;
+        console.log(objectStarWars);
+    }
+    catch(err){
+        console.error(err);
+    }
+}
+
+fetchApi();
+
+
+// 🌟 Exercise 4: Analyze
+// Instructions
+// Analyse the code provided below - what will be the outcome?
+
+function resolveAfter2Seconds() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve('resolved');
+        }, 2000);
+    });
+}
+
+async function asyncCall() {
+    console.log('calling');
+    let result = await resolveAfter2Seconds();
+    console.log(result);
+}
+
+asyncCall();
+
+//the outcome will be: calling then after 2 seconds, resolved.
