@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const fromCurrencySelectElement = document.getElementById("fromCurrency");
     const toCurrencySelectElement = document.getElementById("toCurrency");
     const formElement = document.querySelector("form");
+    const exchangeCurrencies = document.getElementById("exchangeCurrencies");
     const convertedAmount = document.getElementById("convertedAmount");
     const amount = document.getElementById("amount");
     errorDiv.style.display = 'None';
@@ -50,5 +51,12 @@ document.addEventListener("DOMContentLoaded", () => {
             toCurrencySelectElement.appendChild(optionElement.cloneNode(true));
         }
     }
+
+    exchangeCurrencies.addEventListener('click', (e) => {
+        e.preventDefault();
+        const temp = fromCurrencySelectElement.value;
+        fromCurrencySelectElement.value = toCurrencySelectElement.value;
+        toCurrencySelectElement.value = temp;
+    });
 
 });
