@@ -21,17 +21,21 @@ body {
   border: 5px solid yellow;
   font-weight: 700;
   text-align: center;
+  color: white;
+  font-size: 30px;
 }
 
 #loadCharacter {
   border: 2px solid yellow;
-  height: 40px;
+  height: 50px;
+  width: 300px;
   font-size: 30px;
   border-radius: 10px;
   font-weight: 700;
 }
 
-.loading {
+.loading,
+#errorMessage {
   color: white;
   display: None;
 }
