@@ -15,7 +15,7 @@ const  getPostById = async (req,res) => {
         if(!post)
             return res.status(404).json({error: 'Post not found'});
         else{
-            res.json(post)
+            res.json(post);
         }
     }catch(err){
         res.status(500).json({error:err.message});
@@ -52,7 +52,7 @@ const deletePost = async (req,res) => {
             return res.status(404).json({error: 'Post not found'});
         }
         else{
-            res.status(204).json('Post deleted successfully!');
+            res.status(204).json('Post was deleted successfully!');
         }
     }catch(err){
         res.status(500).json({'error': err.message});

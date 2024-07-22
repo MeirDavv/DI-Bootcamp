@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const {blogRoutes} = require('./routes/blogRoutes.js');
+const {bookRoutes} = require('./routes/bookRoutes.js');
 
 require('dotenv').config();
 
@@ -9,8 +9,8 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
-app.use('/api',blogRoutes);
+app.use('/api',bookRoutes);
 
-app.listen(port, () => {
+app.listen(port, ()=>{
     console.log(`Server is running on ${port}`);
 });
