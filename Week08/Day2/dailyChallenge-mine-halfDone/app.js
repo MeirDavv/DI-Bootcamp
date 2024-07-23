@@ -20,7 +20,7 @@
 
 const express = require('express');
 const cors = require('cors');
-const userRoutes = require('./routes/userRoutes.js');
+const {userRoutes} = require('./routes/userRoutes.js');
 
 require('dotenv').config();
 
@@ -29,7 +29,6 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
 app.use('/api',userRoutes);
 
 app.listen(port, () => {

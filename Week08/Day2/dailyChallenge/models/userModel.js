@@ -1,20 +1,42 @@
+const { hash } = require('bcrypt');
 const {db} = require('../config/db.js');
 
-// creating a table in the database:
-/*
-CREATE TABLE posts (
-    id SERIAL PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
-    content TEXT
-)
-*/
+const addUser = async(user,hashedPassword) => {
+    return db.transaction(async trx => {
+        const [newUser] = await trx('users').insert(user).returning('*');
+        await trx('hashpwd').insert({
+            username: newUser.username,
+            password: hashedPassword
+        });
+        return newUser;
+    });
+};
 
-const User = {
-    getAll: () => db('users').select('id,email,username,first_name,last_name'),
-    getById: (id) => db('users').where({id}).select('id,email,username,first_name,last_name'),
-    create: (post) => db('users').insert(post).returning('id,email,username,first_name,last_name'),
-    update: (id, post) => db('users').update(post).where({id}).returning('id,email,username,first_name,last_name'),
-    delete: (id) => db('users').del().where({id}),
+const getUserByUsername = async (username) => {
+    return db('users').where({username}).first();
+};
+
+const getPasswordByUsername = async(username) =>{
+    return db('hashpwd').where({username}).first();
+};
+
+const getAllUsers = async () => {
+    return db('users').select('*');
 }
 
-module.exports = {User};
+const getUserById = async (id) => {
+    return db('users').where({ id }).first();
+};
+
+const updateUser = async (id, user) => {
+    return db('users').where({ id }).update(user).returning('*');
+};
+
+module.exports = {
+    addUser,
+    getUserByUsername,
+    getPasswordByUsername,
+    getAllUsers,
+    getUserById,
+    updateUser
+};
