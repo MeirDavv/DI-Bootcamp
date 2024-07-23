@@ -11,7 +11,7 @@ const getAllPosts = async (req,res) => {
 
 const  getPostById = async (req,res) => {
     try{
-        const post = Post.getById(req.params.id);
+        const post = await Post.getById(req.params.id);
         if(!post)
             return res.status(404).json({error: 'Post not found'});
         else{
