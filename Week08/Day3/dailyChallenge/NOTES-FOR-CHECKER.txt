@@ -1,0 +1,6 @@
+Dear checker,
+Our instructor Ziv recommended to do 1 exercise with Json and one with postgres.
+I decided to make this one with postgres and not with json although what the exercise said, 
+I will try to add even more functionalities that are not written in the exercise, for practice purposes.
+Hope it's good, feel free to contact me if something needs a change ;)
+Have an amazing day!

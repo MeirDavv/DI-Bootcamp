@@ -8,4 +8,4 @@ router.post('/posts', blogController.createPost);
 router.put('/posts/:id', blogController.updatePost);
 router.delete('/posts/:id', blogController.deletePost);
 
-module.exports = {router};
+module.exports = router;
