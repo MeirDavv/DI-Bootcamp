@@ -1,5 +1,8 @@
+import React from 'react';
+
+
 const UserFavoriteAnimals = (props) => {
-    const favAnimals = props.article;
+    const favAnimals = props.favAnimals;
     console.log(favAnimals);
     return(
         <div>

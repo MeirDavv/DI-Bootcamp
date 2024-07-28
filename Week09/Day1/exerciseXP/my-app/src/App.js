@@ -23,7 +23,7 @@ function App() {
         <h3>first name: {user.firstName}</h3>
         <h3>last name: {user.lastName}</h3>
 
-        <UserFavoriteAnimals article = {user.favAnimals}/>
+        <UserFavoriteAnimals favAnimals = {user.favAnimals}/>
       </header>
     </div>
   );
