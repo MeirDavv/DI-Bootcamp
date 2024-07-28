@@ -3,6 +3,9 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+import {getRandomEmojis, shuffle} from './helper.js'
+
+
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -24,29 +27,7 @@ const emojis = [
 
 let totalScore = 0;
 
-function getRandomEmojis(){
-    const uniqueEmojies = [...emojis];
-    const selectOptions = [];
 
-    for (let i=0; i<=3; i++){
-        const randomIndex = Math.floor(Math.random() * uniqueEmojies.length);
-        selectOptions.push(uniqueEmojies[randomIndex].name);
-        uniqueEmojies.splice(randomIndex,1)
-    }
-
-    return selectOptions;
-}
-
-function shuffle(array){
-    let currentIndex = array.length;
-
-    while (currentIndex!=0){
-        let randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex --;
-
-        [array[currentIndex],array[randomIndex]] = [array[randomIndex],array[currentIndex]];
-    }
-}
 
 app.get('/get-emoji', (req,res) => {
     const selectOptions = getRandomEmojis();
