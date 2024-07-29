@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg';
 import './App.css';
 import Car from './Components/Car.jsx';
 import Events from './Components/Events.jsx';
+import Phone from './Components/Phone.jsx';
+import Color from './Components/Color.jsx';
 
 function App() {
   const carinfo = { name: "Ford", model: "Mustang" };
@@ -12,6 +14,8 @@ function App() {
     <div>
       <Car carinfo={carinfo} />
       <Events/>
+      <Phone/>
+      <Color/>
     </div>
   );
 }
