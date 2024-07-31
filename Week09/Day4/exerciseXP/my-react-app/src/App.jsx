@@ -1,6 +1,6 @@
 import React from "react";
 import { ErrorBoundary } from "./components/ErrorBoundary";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, json } from "react-router-dom";
 import {Routes,Route,Link, NavLink} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import PostList from "./components/PostList";
@@ -16,7 +16,36 @@ const routes = (
   </Routes>
 );
 
+const webhookUrl = 'https://webhook.site/a070d54d-cf6b-4bcd-80f7-c48b90b6ba39'
+
 class App extends React.Component{
+
+
+  handleClick = async () => {
+    const data = {
+      key1: "myusername",
+      email: "mymail@gmail.com",
+      name: "Isaac",
+      lastname: "Doe",
+      age: 27
+    };
+    try{
+      const response = await fetch (webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+      const jsonResponse = await response.json();
+      console.log(jsonResponse);
+    }catch(error){
+      console.log("Error: ", error);
+    }
+  }
+
+
+
   render(){
     return(
       <ErrorBoundary>
@@ -34,6 +63,9 @@ class App extends React.Component{
           <Example2/>
           <Example3/>
           
+          <ErrorBoundary>
+            <button onClick = {this.handleClick}>Post Data</button>
+          </ErrorBoundary>
         </BrowserRouter>
       </ErrorBoundary>
     );
