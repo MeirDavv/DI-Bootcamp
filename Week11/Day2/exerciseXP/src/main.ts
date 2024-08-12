@@ -97,3 +97,9 @@ const numberStack = new Stack<number>();
 numberStack.push(10);
 console.log(numberStack.pop());
 console.log(numberStack.isEmpty());
+
+// exercise5
+
+function filterArray<T>(array: T[], predicate:(element:T)=>boolean):T[]{
+    return array.filter(item => predicate(item))
+}

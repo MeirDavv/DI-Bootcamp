@@ -53,3 +53,7 @@ const numberStack = new Stack();
 numberStack.push(10);
 console.log(numberStack.pop());
 console.log(numberStack.isEmpty());
+// exercise5
+function filterArray(array, predicate) {
+    return array.filter(item => predicate(item));
+}
