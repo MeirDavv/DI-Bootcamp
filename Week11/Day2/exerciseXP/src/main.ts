@@ -49,26 +49,17 @@ class Sedan implements Car{
 
 // Exercise3
 
-interface T{
-    name: string;
+
+
+function combineObjects<T extends object, U extends object> (t:T,u:U ):T&U {
+    return {...t,...u}
 }
 
-interface U{
-    age: number;
-}
-
-const combineObjects = (t:T,u:U ):T&U=>{
-    let combined: (T&U);
-    combined = {...t,...u}
-    return combined
-
-}
-
-const t:T = {
+const t = {
     name:"Meir"
 };
 
-const u:U = {
+const u = {
     age:23
 }
 
